@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home &ndash; Jake Rubin</title>
+    <link rel="icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="./style/default.css">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/navbar.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+    <div id="navbar">
+        <div id="navtitle" class="navelem">
+            <h1>JAKE RUBIN</h1>
+        </div>
+        <ul id="navlist" class="navnonmobile">
+            <li>
+                <a class="navelem navitem">
+                    <h3>Home</h3>
+                </a>
+            </li>
+            <li>
+                <a href="./aboutme.html" class="navelem navitem">
+                    <h3>About Me</h3>
+                </a>
+            </li>
+            <li class="navproj">
+                <span class="navelem navitem">
+                    <h3>Projects</h3>
+                    <img src="./img/downarrow.png" class="arrowimg">
+                </span>
+                <ul class="dropdown">
+                    <li>
+                        <a href="./projects/website.html" class="navelem navitem">
+                            <h5>This Website</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./projects/batbot.html" class="navelem navitem">
+                            <h5>Batbot</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./projects/covidapp.html" class="navelem navitem">
+                            <h5>COVID App</h5>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a class="navelem navitem navres navnonmobile" href="./rubinresume.pdf" download>
+            <h3>Resume</h3>
+            <img src="./img/download.svg" class="downloadimg">
+        </a>
+        <ul id="burgerbun">
+            <li id="closedburger">
+                <img src="./img/hamburger.png">
+            </li>
+            <li id="openburger">
+                <span id="grillmarks">
+                    <img src="./img/xicon.png">
+                </span>
+                <ul id="burgertoppings">
+                    <li>
+                        <a class="navelem navitem">
+                            <h3>Home</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./aboutme.html" class="navelem navitem">
+                            <h3>About Me</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <span id="projspan" class="navelem navitem">
+                            <h3>Projects</h3>
+                            <img id="burgerarrow" src="./img/downarrow.png" class="arrowimg">
+                        </span>
+                        <ul id="burgerdrop" style="display:none;">
+                            <li>
+                                <a href="./projects/website.html" class="navelem navitem">
+                                    <h5>This Website</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./projects/batbot.html" class="navelem navitem">
+                                    <h5>Batbot</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./projects/covidapp.html" class="navelem navitem">
+                                    <h5>COVID App</h5>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="burgerres" class="navelem navitem navres" href="./rubinresume.pdf" download>
+                            <h3>Resume</h3>
+                            <img src="./img/download.svg" class="downloadimg">
+                        </a>
+                    </li>
+                </ul>
+                <div id="grease"></div>
+            </li>
+        </ul>
+        <script src="./js/navbar.js"></script>
+    </div>
+    <div class="hwelcome">
+        <div class="hwelcometext">
+            <h1 class="largewelcome">WELCOME TO MY PORTFOLIO</h1>
+            <h1 class="smallwelcome">WELCOME</h1>
+            <p>
+                I'm Jake Rubin, a computer engineering student at the University of British Columbia.
+                This portfolio contains both coursework and personal projects from my time in university.
+                The site will be updated as I make new projects.
+                I hope you enjoy my work.
+            </p>
+            <a href="./aboutme.html">Click here to learn more about me.</a>
+        </div> 
+        <div class="hwelcomeimg"></div>
+    </div>
+    <div class="hproj">
+        <div>
+            <a href="./projects/website.html">
+                <h1>WEBSITE</h1>
+            </a>
+            <img src="./img/webcode.png">
+        </div>
+        <div>
+            <a href="./projects/batbot.html">
+                <h1>BATBOT</h1>
+            </a>
+            <img src="./img/batbot.jpg">
+        </div>
+        <div>
+            <a href="./projects/covidapp.html">
+                <h1>COVID APP</h1>
+            </a>
+            <img src="./img/covidchecker.png">
+        </div>
+    </div>
+    <footer>
+        <div></div>
+    </footer>
+</body>
+</html>

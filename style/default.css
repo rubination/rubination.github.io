@@ -1,0 +1,133 @@
+:root{
+    --c1: #005;
+    --c2: #06f;
+    --c3: #eef;
+    --c4: #aaa;
+    --c5: #f44;
+    --headerfont: Strasua, Rockwell, serif;
+    --textfont: "Futura Medium", Verdana, sans-serif;
+}
+
+@font-face {
+    font-family: Strasua;
+    src: url(./../font/strasua.ttf);
+}
+
+@font-face {
+    font-family: "Futura Medium";
+    src: url(./../font/futura\ medium\ bt.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: normal;
+}
+
+body {
+    background-color:black;
+    overflow-x:clip;
+}
+
+body > div {
+    border-bottom: 10px solid black;
+}
+
+h1 {
+    font-family:var(--headerfont);
+}
+
+p {
+    font-family:var(--textfont);
+}
+
+footer div{
+    min-height:fit-content;
+    background-color: var(--c5);
+    font-family:var(--textfont);
+    padding: 10px;
+    font-weight:bold;
+}
+
+footer div::before {
+    content: "Website created by Jake Rubin.";
+}
+
+::-webkit-scrollbar {
+    display:block;
+    width:18px;
+    background:black;
+}
+
+::-webkit-scrollbar-track {
+    background:black;
+}
+
+::-webkit-scrollbar-thumb {
+	display:block;
+	border: 2px solid black;
+    background: var(--c4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--c2);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--c1);
+}
+
+::-webkit-scrollbar-button:single-button {
+    display: block;
+    height: 18px;
+    background-size:cover;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background-image:url(./../img/scrollbar/scrollarrowup.png);
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    background-image:url(./../img/scrollbar/scrollarrowuphover.png);
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:active {
+    background-image:url(./../img/scrollbar/scrollarrowupactive.png);
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+    background-image:url(./../img/scrollbar/scrollarrowdown.png);
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+    background-image:url(./../img/scrollbar/scrollarrowdownhover.png);
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment:active {
+    background-image:url(./../img/scrollbar/scrollarrowdownactive.png);
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    background-image:url(./../img/scrollbar/scrollarrowleft.png);
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:decrement:hover {
+    background-image:url(./../img/scrollbar/scrollarrowlefthover.png);
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:decrement:active {
+    background-image:url(./../img/scrollbar/scrollarrowleftactive.png);
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+    background-image:url(./../img/scrollbar/scrollarrowright.png);
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:increment:hover {
+    background-image:url(./../img/scrollbar/scrollarrowrighthover.png);
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:increment:active {
+    background-image:url(./../img/scrollbar/scrollarrowrightactive.png);
+}

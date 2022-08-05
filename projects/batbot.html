@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Batbot &ndash; Jake Rubin</title>
+    <link rel="icon" href="./../img/favicon.ico">
+    <link rel="stylesheet" href="./../style/default.css">
+    <link rel="stylesheet" href="./../style/navbar.css">
+    <link rel="stylesheet" href="./../style/projects.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+    <div id="navbar">
+        <div id="navtitle" class="navelem">
+            <h1>JAKE RUBIN</h1>
+        </div>
+        <ul id="navlist" class="navnonmobile">
+            <li>
+                <a href="./../index.html" class="navelem navitem">
+                    <h3>Home</h3>
+                </a>
+            </li>
+            <li>
+                <a href="./../aboutme.html" class="navelem navitem">
+                    <h3>About Me</h3>
+                </a>
+            </li>
+            <li class="navproj">
+                <span class="navelem navitem">
+                    <h3>Projects</h3>
+                    <img src="./../img/downarrow.png" class="arrowimg">
+                </span>
+                <ul class="dropdown">
+                    <li>
+                        <a href="./website.html" class="navelem navitem">
+                            <h5>This Website</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="navelem navitem">
+                            <h5>Batbot</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./covidapp.html" class="navelem navitem">
+                            <h5>COVID App</h5>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a class="navelem navitem navres navnonmobile" href="./../rubinresume.pdf" download>
+            <h3>Resume</h3>
+            <img src="./../img/download.svg" class="downloadimg">
+        </a>
+        <ul id="burgerbun">
+            <li id="closedburger">
+                <img src="./../img/hamburger.png">
+            </li>
+            <li id="openburger">
+                <span id="grillmarks">
+                    <img src="./../img/xicon.png">
+                </span>
+                <ul id="burgertoppings">
+                    <li>
+                        <a href="./../index.html" class="navelem navitem">
+                            <h3>Home</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./../aboutme.html" class="navelem navitem">
+                            <h3>About Me</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <span id="projspan" class="navelem navitem">
+                            <h3>Projects</h3>
+                            <img id="burgerarrow" src="./../img/downarrow.png" class="arrowimg">
+                        </span>
+                        <ul id="burgerdrop" style="display:none;">
+                            <li>
+                                <a href="./website.html" class="navelem navitem">
+                                    <h5>This Website</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="navelem navitem">
+                                    <h5>Batbot</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./covidapp.html" class="navelem navitem">
+                                    <h5>COVID App</h5>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="burgerres" class="navelem navitem navres" href="./../rubinresume.pdf" download>
+                            <h3>Resume</h3>
+                            <img src="./../img/download.svg" class="downloadimg">
+                        </a>
+                    </li>
+                </ul>
+                <div id="grease"></div>
+            </li>
+        </ul>
+        <script src="./../js/navbar.js"></script>
+    </div>
+    <div id="ptitle">
+        <h1>Batbot</h1>
+        <p>Feb 17, 2022 &ndash; March 10, 2022</p>
+    </div>
+    <div id="pcontrib">
+        <a href="https://github.com/rubination">
+            <img src="https://avatars.githubusercontent.com/u/90235766?v=4">
+            Jake Rubin
+        </a>
+        <a href="https://github.com/LeonardoKamino">
+            <img src="https://avatars.githubusercontent.com/u/59890834?v=4">
+            Leo Kamino Barros
+        </a>
+        <a href="https://github.com/SanHalacoglu">
+            <img src="https://avatars.githubusercontent.com/u/89543019?v=4">
+            &Scedil;an Hala&ccedil;o&gbreve;lu
+        </a>
+        <a href="https://github.com/Ilamparithi-I">
+            <img src="https://avatars.githubusercontent.com/u/63252233?v=4">
+            Ilam Imayavaramban
+        </a>
+    </div>
+    <div id="pfeatureimg">
+        <style>
+            #pfeatureimg {
+                background-image:url(./../img/batbot.jpg);
+                background-size:cover;
+                background-repeat:no-repeat;
+                background-attachment:fixed;
+                background-position-x:center;
+                background-position-y:top;
+            }
+        </style>
+    </div>
+    <div id="pgit">
+        <a href>
+            <img src="./../img/github.png">
+            <p>Click here for the Github repository</p>
+        </a>
+    </div>
+    <div id="ptoollist">
+        <figure>
+            <img src="./../img/toolicons/adafruit.png">
+            <figcaption>Adafruit</figcaption>
+        </figure>
+        <figure>
+            <img src="./../img/toolicons/circuitpython.png">
+            <figcaption>CircuitPython</figcaption>
+        </figure>
+    </div>
+    <div id="psynopsis">
+        <p>
+            This was the first project assigned in CPEN 291: Computer Engineering Design Studio I. 
+            The goal of this project was to build a dancing robot, demonstrating skills with circuit construction and controlling complex hardware components via software.
+            The decision to add the Batman theme was for overall aesthetics and for weight distribution via the cape.
+        </p>
+    </div>
+    <div id="phardware">
+        <div id="hwtablediv">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Item Name</th>
+                        <th>Item Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>3D-Printed Robot Body (provided)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3D-Printed Robot Foot (provided)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Adafruit Microcontroller</td>
+                        <td>ItsyBitsy M4</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Adafruit LCD Display</td>
+                        <td>1.44" TFT Breakout</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Ultrasonic Distance Sensor</td>
+                        <td>HC-SR04</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Shift Register</td>
+                        <td>74HC595</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Piezo Buzzer</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Adafruit 3&times;4 Keypad</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Mini-Servo Motor</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>330 &PlusMinus; 16.5&ohm; Resistor</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>LED</td>
+                        <td>
+                            2 &times; Yellow<br>
+                            1 &times; Green<br>
+                            1 &times; Red
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Solderable Perfboard</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Solderless Breadboard</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">
+                            <a id="fritzlink">Click to view this project's Fritzing.</a>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <div id="pfritzmodal">
+        <div>
+            <div id="fritztop">
+                <p>Batbot Fritzing</p>
+                <img div id="fritzx" src="./../img/xicon.png">
+            </div>
+            <img id="fritzimg" src="./../img/featbatbot/DancingRobotFritz.png">
+        </div>
+    </div>
+    <div id="pfeatures">
+        <h1>FEATURES</h1>
+        <div id="featimgs">
+            <div class="featarrow leftarrow disabledarrow">
+                <div class="arrowfill"></div>
+            </div>
+            <div class="featarrow rightarrow">
+                <div class="arrowfill"></div>
+            </div>
+        </div>
+        <div id="dotbar">
+        </div>
+        <div id="smallarrows">
+            <div class="featarrow leftarrow disabledarrow">
+                <div class="arrowfill"></div>
+            </div>
+            <div class="featarrow rightarrow">
+                <div class="arrowfill"></div>
+            </div>
+        </div>
+        <div id="feattext">
+        </div>
+    </div>
+    <footer>
+        <div></div>
+    </footer>
+    <style>
+        @media only screen and (max-width:830px){
+            #ptoollist::before{
+                content:none;
+            }
+
+            #psynopsis, #phardware {
+                flex-direction:column;
+            }
+
+            #psynopsis::before, #phardware::before {
+                width:100%;
+            }
+        }
+
+        @media only screen and (max-width:307px){
+            #ptoollist {
+                justify-content:left;
+            }
+        }
+    </style>
+    <script src="./../js/projects.js"></script>
+</body>
+</html>

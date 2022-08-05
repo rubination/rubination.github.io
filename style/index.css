@@ -1,0 +1,194 @@
+/* WELCOME SECTION */
+
+.hwelcome {
+    display:flex;
+    height:600px;
+    justify-content:center;
+    overflow:clip;
+    background-color:black;
+}
+
+.hwelcomeimg {
+    z-index:10;
+    width:1000px;
+    height:600px;
+    background-image:url(./../img/profile.jpg);
+    background-size: 1000px auto;
+    background-position-x:center;
+    filter:brightness(75%);
+    box-shadow:0 0 50px 50px black inset;
+    overflow:clip;
+}
+
+.hwelcometext {
+    z-index:150;
+    position:absolute;
+    display:flex;
+    flex-direction:column;
+    height:600px;
+    color:var(--c3);
+    font-size:22px;
+    text-align:center;
+    align-items:center;
+    justify-content: space-between;
+    row-gap:20px;
+    padding:50px;
+    border:none;
+    transition: .25s;
+}
+
+.hwelcometext h1 {
+    font-size:3em;
+    text-shadow:2px 2px 2px black;
+}
+
+.hwelcometext p {
+    font-family:var(--textfont);
+    text-shadow:1px 1px 1px black;
+    max-width:1750px;
+}
+
+.hwelcometext a {
+    width:fit-content;
+    background-color:var(--c1);
+    border:2px solid var(--c3);
+    border-radius:20px;
+    padding:20px 30px;
+    text-decoration:none;
+    font-family:var(--textfont);
+    font-weight:bold;
+    color:var(--c3);
+    transition:.25s;
+}
+
+.hwelcometext a:hover {
+    background-color:var(--c5);
+}
+
+.hwelcometext a:active {
+    background-color:black;
+    transition:none;
+}
+
+.smallwelcome{
+    display:none;
+}
+
+/* PROJECTS SECTION */
+
+.hproj {
+    display:flex;
+    flex-direction:row;
+    align-content:center;
+    justify-content:center;
+    width:100%;
+    row-gap:10px;
+    column-gap:10px;
+    background-color: black;
+    border-bottom:10px solid black;
+}
+
+.hproj div {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-grow:1;
+    overflow:clip;
+    background-color:var(--c1);
+    height:440px;
+    width:33.3%;
+    transition:background-color .25s;
+}
+
+.hproj div:hover {
+    background-color:var(--c5);
+}
+
+.hproj div img {
+    height:calc(440px * 1.2);
+    filter:grayscale(1) brightness(150%) opacity(33%);
+    transition:.25s;
+}
+
+.hproj div:hover img {
+    height:440px;
+}
+
+.hproj div a {
+    display:flex;
+    position:absolute;
+    width:calc(33% - 2.5px);
+    height:inherit;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+    color:var(--c4);
+    text-decoration:none;
+}
+
+.hproj div a:hover {
+    color:var(--c3);
+}
+
+.hproj div a:active {
+    color: black;
+}
+
+.hproj h1 {
+    height:fit-content;
+    text-shadow: 4px 4px black;
+}
+
+.hproj div a:active h1 {
+    text-shadow: 4px 4px var(--c3)
+}
+
+/* DIFFERENT SCREEN WIDTHS */
+
+@media only screen and (max-width:1220px){
+    .hproj {
+        flex-direction:column;
+    }
+
+    .hproj div {
+        width:100%;
+        height:200px;
+        transition:.25s;
+    }
+
+    .hproj div img {
+        width:120%;
+        height:auto;
+    }
+
+    .hproj div:hover img {
+        width:100%;
+        height:auto;
+    }
+
+    .hproj div a {
+        width:100%;
+    }
+}
+
+@media only screen and (max-width:1058px){
+    .smallwelcome {
+        display:block;
+    }
+
+    .largewelcome {
+        display:none;
+    }
+}
+
+@media only screen and (max-width:697px){
+    .hwelcometext {
+        font-size:20px;
+    }
+
+    .hproj div {
+        height:150px;
+    }
+}

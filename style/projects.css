@@ -1,0 +1,462 @@
+a {
+    font-family:var(--textfont);
+    color:var(--c1);
+}
+
+/* TITLE SECTION */
+
+#ptitle {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    row-gap:10px;
+    column-gap:100px;
+    align-items:center;
+    justify-content:space-between;
+    background-color:var(--c2);
+    padding:30px;
+    font-size:30px;
+}
+
+#ptitle p {
+    font-weight:600;
+}
+
+#ptitle h1 {
+    transition: font-size .25s;
+}
+
+@media only screen and (max-width:500px){
+    #ptitle h1 {
+        font-size:1.5em;
+    }
+}
+
+/* CONTRIBUTORS SECTION */
+
+#pcontrib {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    column-gap:25px;
+    row-gap:5px;
+    align-items:center;
+    justify-content:left;
+    padding: 15px 30px;
+    background-color:var(--c4);
+}
+
+#pcontrib > a {
+    display:flex;
+    flex-direction:row;
+    column-gap:10px;
+    text-decoration:none;
+    align-items:center;
+    font-size:22px;
+    font-weight:bold;
+}
+
+#pcontrib > a:hover {
+    color:var(--c5)
+}
+
+#pcontrib > a > img {
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background-color:black;
+}
+
+/* FEATURE IMAGE SECTION */
+
+#pfeatureimg {
+    min-height:300px;
+    height:25vh;
+    max-height:500px;
+}
+
+/* GITHUB LINK SECTION */
+
+#pgit {
+    padding:15px 30px;
+    background-color:var(--c4);
+}
+
+#pgit a {
+    display:flex;
+    align-items:center;
+    width:fit-content;
+    height:fit-content;
+    column-gap:10px;
+    font-weight:bold;
+    font-size:22px;
+    text-decoration:none;
+}
+
+#pgit a:hover {
+    color:var(--c5)
+}
+
+#pgit img {
+    height:22px;
+    filter: invert(7%) sepia(73%) saturate(4866%) hue-rotate(241deg) brightness(77%) contrast(124%);
+}
+
+#pgit a:hover img {
+    filter: invert(41%) sepia(26%) saturate(7295%) hue-rotate(336deg) brightness(113%) contrast(112%);
+}
+
+/* TOOL LIST SECTION */
+
+#ptoollist {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    column-gap: 30px;
+    padding:15px 30px;
+    background-color: var(--c2);
+    overflow-x:auto;
+}
+
+#ptoollist::before {
+    content:"Project built with";
+    font: 30px var(--textfont);
+    font-weight:bold;
+    position:absolute;
+    left:30px;
+}
+
+#ptoollist img {
+    max-height:100px;
+}
+
+#ptoollist figcaption {
+    justify-self:center;
+    text-align:center;
+    font-family:var(--textfont);
+    font-weight:bold;
+    max-width:100px;
+}
+
+/* SYNOPSIS and EQUIPMENT SECTIONS */
+
+#psynopsis, #phardware {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:left;
+    column-gap:50px;
+    row-gap:30px;
+    background-color:var(--c3);
+    padding:30px;
+    font-family:var(--textfont);
+    font-size:20px;
+}
+
+#psynopsis::before {
+    content:"Synopsis";
+    font-size:30px;
+    font-weight:bold;
+}
+
+#phardware::before {
+    content:"Hardware";
+    font-size:30px;
+    font-weight:bold;
+}
+
+#psynopsis > p {
+    max-width:2000px;
+    width:100%;
+}
+
+#hwtablediv {
+    width:100%;
+    overflow-x:auto;
+}
+
+#phardware table {
+    width:100%;
+    max-width:1000px;
+    border-collapse:collapse;
+}
+
+#phardware thead {
+    background-color:var(--c2);
+}
+
+#phardware tbody {
+    background-color:var(--c4);
+}
+
+#phardware th, #phardware tbody td {
+    border:4px solid black;
+    padding:10px;
+}
+
+#phardware tbody td:first-child{
+    text-align:right;
+}
+
+#phardware tfoot td {
+    padding-top:10px;
+}
+
+#phardware tfoot a {
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#phardware tfoot a:hover {
+    color:var(--c5);
+}
+
+#pfritzmodal {
+    display:none;
+    z-index:500;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+#pfritzmodal > div {
+    position:relative;
+    display:flex;
+    top:10%;
+    margin:auto;
+    width:fit-content;
+    max-width:90%;
+    max-height:80%;
+    flex-direction:column;
+    border-radius:10px;
+    background-color:var(--c4);
+    overflow:clip;
+    animation: fzmodopen .75s;
+}
+
+#fritztop {
+    display:flex;
+}
+
+#fritztop p {
+    padding:15px;
+    font-size:auto;
+    height:50px;
+    flex-grow:1;
+    font-weight:bold;
+}
+
+#fritzx {
+    height:50px;
+    width:50px;
+    padding:12.5px;
+    align-self:right;
+    cursor:pointer;
+}
+
+#fritzx:hover {
+    background-color:var(--c5);
+}
+
+#fritzimg {
+    width:auto;
+    max-height:calc(80vh - 50px);
+}
+
+@keyframes fzmodopen {
+    from {top:0; opacity:0;}
+    to {top:10%; opacity:1;}
+}
+
+/* FEATURES SECTION */
+
+#pfeatures {
+    background-color:black;
+    color:var(--c3);
+}
+
+#pfeatures h1 {
+    width:100%;
+    font-size:50px;
+    text-align:center;
+    padding:30px;
+}
+
+#featimgs {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    height:500px;
+    overflow-y:clip;
+    width:100%;
+}
+
+.featimg {
+    width:calc(500px * 16 / 9);
+    height:100%;
+}
+
+.featimg.border {
+    border: 1px solid var(--c3);
+}
+
+/* arrow design */
+
+.featarrow {
+    z-index:6;
+    flex-grow:1;
+    background-image:url(./../img/featarrow.png);
+    background-size:50%;
+    background-position:center;
+    background-repeat:no-repeat;
+    height:100%;
+    cursor:pointer;
+    max-width:300px;
+}
+
+#smallarrows {
+    display:none;
+    flex-direction:row;
+}
+
+#smallarrows > .featarrow {
+    flex-grow:1;
+    width:auto;
+    height:125px;
+    background-size:50px;
+    max-width:none;
+}
+
+@media only screen and (min-width:1299.44px) {
+    .featarrow {
+        background-size:100px auto;
+    }
+}
+
+.leftarrow {
+    transform:scaleX(-1);
+}
+
+.arrowfill {
+    z-index:5;
+    width:100%;
+    height:100%;
+    background-color:var(--c3);
+    opacity:0;
+}
+
+.featarrow:hover > .arrowfill {
+    opacity:0.25;
+}
+
+.featarrow.disabledarrow {
+    cursor:auto;
+}
+
+.featarrow.disabledarrow > .arrowfill {
+    background-color:black;
+    opacity:0.75;
+}
+
+.featarrow.disabledarrow:hover > .arrowfill {
+    opacity:0.75;
+}
+
+/* dotbar design */
+
+#dotbar {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    padding:0px 30px;
+}
+
+.slidedot {
+    margin:20px 7.5px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background-color:var(--c3);
+    overflow:hidden;
+}
+
+.slidedot:not(.on) {
+    cursor:pointer;
+    opacity:0.5;
+}
+
+.slidedot:not(.on):hover {
+    opacity:0.75;
+}
+
+@media only screen and (max-width:500px) {
+    #dotbar {
+        display:none;
+    }
+}
+
+/* feature text section */
+
+.feat {
+    margin:auto;
+    padding:0px 30px;
+    max-width:1550.41px;
+    font-family:var(--textfont);
+    font-size:20px;
+}
+
+.feat:not(:first-child), .featimg:not(:nth-child(2)) {
+    display:none;
+}
+
+.feat h2 {
+    font-size:2em;
+    padding:30px 0px;
+    text-align:center;
+}
+
+.feat h2.br {
+    display:none;
+}
+
+.feat ol {
+    margin:20px 0px 40px 0px;
+    list-style-position:inside;
+}
+
+.feat ol li::marker {
+    font-weight:bold;
+}
+
+@media only screen and (max-width:1000px) {
+    #featimgs {
+        display:block;
+        height:auto;
+    }
+
+    .featimg {
+        width:100%;
+        height: calc(100vw * 9 / 16);
+    }
+
+    #featimgs > .featarrow {
+        display:none;
+    }
+
+    #smallarrows {
+        display:flex;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .feat h2.dash {
+        display:none;
+    }
+
+    .feat h2.br {
+        display:block;
+    }
+}

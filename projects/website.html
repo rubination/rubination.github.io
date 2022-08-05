@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>This Website &ndash; Jake Rubin</title>
+    <link rel="icon" href="./../img/favicon.ico">
+    <link rel="stylesheet" href="./../style/default.css">
+    <link rel="stylesheet" href="./../style/navbar.css">
+    <link rel="stylesheet" href="./../style/projects.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+    <div id="navbar">
+        <div id="navtitle" class="navelem">
+            <h1>JAKE RUBIN</h1>
+        </div>
+        <ul id="navlist" class="navnonmobile">
+            <li>
+                <a href="./../index.html" class="navelem navitem">
+                    <h3>Home</h3>
+                </a>
+            </li>
+            <li>
+                <a href="./../aboutme.html" class="navelem navitem">
+                    <h3>About Me</h3>
+                </a>
+            </li>
+            <li class="navproj">
+                <span class="navelem navitem">
+                    <h3>Projects</h3>
+                    <img src="./../img/downarrow.png" class="arrowimg">
+                </span>
+                <ul class="dropdown">
+                    <li>
+                        <a class="navelem navitem">
+                            <h5>This Website</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./batbot.html" class="navelem navitem">
+                            <h5>Batbot</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./covidapp.html" class="navelem navitem">
+                            <h5>COVID App</h5>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a class="navelem navitem navres navnonmobile" href="./../rubinresume.pdf" download>
+            <h3>Resume</h3>
+            <img src="./../img/download.svg" class="downloadimg">
+        </a>
+        <ul id="burgerbun">
+            <li id="closedburger">
+                <img src="./../img/hamburger.png">
+            </li>
+            <li id="openburger">
+                <span id="grillmarks">
+                    <img src="./../img/xicon.png">
+                </span>
+                <ul id="burgertoppings">
+                    <li>
+                        <a href="./../index.html" class="navelem navitem">
+                            <h3>Home</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./../aboutme.html" class="navelem navitem">
+                            <h3>About Me</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <span id="projspan" class="navelem navitem">
+                            <h3>Projects</h3>
+                            <img id="burgerarrow" src="./../img/downarrow.png" class="arrowimg">
+                        </span>
+                        <ul id="burgerdrop" style="display:none;">
+                            <li>
+                                <a class="navelem navitem">
+                                    <h5>This Website</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./batbot.html" class="navelem navitem">
+                                    <h5>Batbot</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./covidapp.html" class="navelem navitem">
+                                    <h5>COVID App</h5>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="burgerres" class="navelem navitem navres" href="./../rubinresume.pdf" download>
+                            <h3>Resume</h3>
+                            <img src="./../img/download.svg" class="downloadimg">
+                        </a>
+                    </li>
+                </ul>
+                <div id="grease"></div>
+            </li>
+        </ul>
+        <script src="./../js/navbar.js"></script>
+    </div>
+    <div id="ptitle">
+        <h1>This Website</h1>
+        <p>May 25, 2022 &ndash; present</p>
+    </div>
+    <div id="pcontrib">
+        <a href="https://github.com/rubination">
+            <img src="https://avatars.githubusercontent.com/u/90235766?v=4">
+            Jake Rubin
+        </a>
+    </div>
+    <div id="pfeatureimg">
+        <style>
+            #pfeatureimg {
+                background-image:url(./../img/webcode.png);
+                background-size:cover;
+                background-repeat:no-repeat;
+                background-attachment:fixed;
+                background-position-x:center;
+                background-position-y:top;
+            }
+        </style>
+    </div>
+    <div id="pgit">
+        <a href>
+            <img src="./../img/github.png">
+            <p>Click here for the Github repository</p>
+        </a>
+    </div>
+    <div id="ptoollist">
+        <figure>
+            <img src="./../img/toolicons/html.png">
+            <figcaption>HTML</figcaption>
+        </figure>
+        <figure>
+            <img src="./../img/toolicons/css.png">
+            <figcaption>CSS</figcaption>
+        </figure>
+        <figure>
+            <img src="./../img/toolicons/js.png">
+            <figcaption>JavaScript</figcaption>
+        </figure>
+    </div>
+    <div id="psynopsis">
+        <p>
+            This website acts as a portfolio for my work throughout university.
+            It makes the most sense for a website of computer engineering projects to be itself a computer engineering project, which is why this is made from scratch.
+            You can call this page a recursive reference.
+            The goal of this project is to show my range of skills with HTML, CSS, and JavaScript DOM using a variety of features from basic styling to JavaScript animations.
+        </p>
+    </div>
+    <div id="pfeatures">
+        <h1>FEATURES</h1>
+        <div id="featimgs">
+            <div class="featarrow leftarrow disabledarrow">
+                <div class="arrowfill"></div>
+            </div>
+            <img class="featimg" src="./../img/featwebsite/navbar.png">
+            <img class="featimg" src="./../img/featwebsite/projshowcase.png">
+            <div class="featarrow rightarrow">
+                <div class="arrowfill"></div>
+            </div>
+        </div>
+        <div id="dotbar">
+            <div class="slidedot on"></div>
+            <div class="slidedot"></div>
+        </div>
+        <div id="smallarrows">
+            <div class="featarrow leftarrow disabledarrow">
+                <div class="arrowfill"></div>
+            </div>
+            <div class="featarrow rightarrow">
+                <div class="arrowfill"></div>
+            </div>
+        </div>
+        <div id="feattext">
+            <div class="feat">
+                <h2 class="dash">1/2 &mdash; Navigation Bar</h2>
+                <h2 class="br">1/2 <br> Navigation Bar</h2>
+                <p>
+                    This was the first part of the website that was constructed.  After all, it is at the top of every page.
+                    There are four key attributes used in the creation of this bar.
+                </p>
+                <ol>
+                    <li>
+                        <strong>Fixed positioning:</strong> uses fixed position, body's margin-top increased to compensate for space of bar.
+                    </li><br>
+                    <li>
+                        <strong>Collapsable menu:</strong> uses a click event listener to trigger function which shows or hides options and changes overflow properties of body to prevent scrolling.
+                        Another JavaScript function closes the "Projects" tab in the event that the collapsable menu closes when it is still open.
+                    </li><br>
+                    <li>
+                        <strong>Resizing property:</strong> uses the CSS @media rule with the max-width property to show the full menu or collapsable menu at different screen sizes. 
+                        Another JavaScript function tracks screen size to close the collapsable menu if the screen width becomes wide enough to accomodate the full menu.
+                    </li><br>
+                    <li>
+                        <strong>Downloadable link:</strong> uses &lt;a&gt; tag's download attribute to download my resume upon the click of the "Resume" button.
+                    </li>
+                </ol>
+            </div>
+            <div class="feat">
+                <h2 class="dash">2/2 &mdash; Project Showcase</h2>
+                <h2 class="br">2/2 <br> Project Showcase</h2>
+                <p>
+                    This part of the website showcases my top three projects on the home page, which also serve as links to the projects in question.
+                    Three components were utilized to provide the above appearance to this element.
+                </p>
+                <ol>
+                    <li>
+                        <strong>Tinted images:</strong> uses full grayscale, increased brightness and reduced opacity via CSS filter functions to create an image which can be "tinted" by the background color of the division containing the image.
+                    </li><br>
+                    <li>
+                        <strong>Link covering image:</strong> uses absolute positioning and CSS calc() function for width to place a link on top of an image within the bounds of the division.
+                    </li><br>
+                    <li>
+                        <strong>Seamless transitions:</strong> uses CSS transitions to smoothly change image height and background color over 0.25 seconds.
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div></div>
+    </footer>
+    <style>
+        @media only screen and (max-width:930px){
+            #ptoollist::before{
+                content:none;
+            }
+
+            #psynopsis {
+                flex-direction:column;
+            }
+
+            #psynopsis::before {
+                width:100%;
+            }
+        }
+
+        @media only screen and (max-width:436px){
+            #ptoollist {
+                justify-content:left;
+            }
+        }
+    </style>
+    <script src="./../js/projects.js"></script>
+</body>
+</html>
