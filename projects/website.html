@@ -129,12 +129,16 @@
         </style>
     </div>
     <div id="pgit">
-        <a href>
+        <a href="https://github.com/rubination/rubination.github.io">
             <img src="./../img/github.png">
             <p>Click here for the Github repository</p>
         </a>
     </div>
     <div id="ptoollist">
+        <figure>
+            <img src="./../img/github.png">
+            <figcaption>GitHub Pages</figcaption>
+        </figure>
         <figure>
             <img src="./../img/toolicons/html.png">
             <figcaption>HTML</figcaption>
@@ -164,12 +168,18 @@
             </div>
             <img class="featimg" src="./../img/featwebsite/navbar.png">
             <img class="featimg" src="./../img/featwebsite/projshowcase.png">
+            <img class="featimg" src="./../img/featwebsite/hobbies.png">
+            <img class="featimg" src="./../img/featwebsite/fritzing.png">
+            <img class="featimg" src="./../img/featwebsite/features.png">
             <div class="featarrow rightarrow">
                 <div class="arrowfill"></div>
             </div>
         </div>
         <div id="dotbar">
             <div class="slidedot on"></div>
+            <div class="slidedot"></div>
+            <div class="slidedot"></div>
+            <div class="slidedot"></div>
             <div class="slidedot"></div>
         </div>
         <div id="smallarrows">
@@ -182,8 +192,8 @@
         </div>
         <div id="feattext">
             <div class="feat">
-                <h2 class="dash">1/2 &mdash; Navigation Bar</h2>
-                <h2 class="br">1/2 <br> Navigation Bar</h2>
+                <h2 class="dash">1/5 &mdash; Navigation Bar</h2>
+                <h2 class="br">1/5 <br> Navigation Bar</h2>
                 <p>
                     This was the first part of the website that was constructed.  After all, it is at the top of every page.
                     There are four key attributes used in the creation of this bar.
@@ -206,8 +216,8 @@
                 </ol>
             </div>
             <div class="feat">
-                <h2 class="dash">2/2 &mdash; Project Showcase</h2>
-                <h2 class="br">2/2 <br> Project Showcase</h2>
+                <h2 class="dash">2/5 &mdash; Project Showcase</h2>
+                <h2 class="br">2/5 <br> Project Showcase</h2>
                 <p>
                     This part of the website showcases my top three projects on the home page, which also serve as links to the projects in question.
                     Three components were utilized to provide the above appearance to this element.
@@ -224,17 +234,81 @@
                     </li>
                 </ol>
             </div>
+            <div class="feat">
+                <h2 class="dash">3/5 &mdash; Hobby Section</h2>
+                <h2 class="br">3/5 <br> Hobby Section</h2>
+                <p>
+                    This section of the about me page shows that there's more to me than just a computer engineering student.
+                    The opening and closing animations are written in JavaScript, and work in five steps:
+                </p>
+                <ol>
+                    <li>
+                        Remove event listeners from each hobby section's header to prevent multiple animations from being triggered in same window.
+                    </li><br>
+                    <li>
+                        Change style of the selected hobby or hobbies' header and textbox to reflect the section(s) being opened or closed.
+                    </li><br>
+                    <li>
+                        Frame by frame, open alter the height and opacity of each textbox until fully open or closed.
+                    </li><br>
+                    <li>
+                        Stop the animation and remove all transitionary styles not necessary for the needed result.
+                    </li><br>
+                    <li>
+                        Add event listeners for the next possible functions to perform on each hobby section.
+                    </li>
+                </ol>
+            </div>
+            <div class="feat">
+                <h2 class="dash">4/5 &mdash; Hardware Fritzing</h2>
+                <h2 class="br">4/5 <br> Hardware Fritzing</h2>
+                <p>
+                    Only on hardware-inclusive projects, the click of a link displays a modal image with a Fritzing hardware schematic of the project.
+                    This allows me to better visualize the way I built the hardware components of a hardware project.
+                    There are two different design elements used to create the modal image.
+                </p>
+                <ol>
+                    <li>
+                        <strong>JS Event Listeners and Functions:</strong> event listeners placed on a link and the modal's close icon trigger functions to display or hide the modal image.
+                    </li><br>
+                    <li>
+                        <strong>CSS Animations:</strong> uses the CSS @keyframes rule to change the vertical position and opacity of the modal image immediately after display to seamlessly fade in the image.
+                    </li>
+                </ol>
+            </div>
+            <div class="feat">
+                <h2 class="dash">5/5 &mdash; Project Features</h2>
+                <h2 class="br">5/5 <br> Project Features</h2>
+                <p>
+                    This slideshow in every project page shows the most important parts of each project.
+                    Along with the recursive nature of this page, this entry in the features section is also recursive, so I'd count this as second-degree recursion.
+                    Jokes aside, the slideshow functionality was achieved using three components.
+                </p>
+                <ol>
+                    <li>
+                        <strong>Arrows:</strong> if not disabled, clicking an arrow calls a function which displays the previous or next feature, changing the highlit dot and enabling or disabling arrows if necessary.
+                    </li><br>
+                    <li>
+                        <strong>Dots:</strong> similarly to the arrows, calls a function which displays the feature corresponding to each dot and updating each arrow and dots as needed.
+                    </li><br>
+                    <li>
+                        <strong>CSS @media rule:</strong> arrows and dots change places or disappear entirely depending on screen size.
+                    </li>
+                </ol>
+            </div>
         </div>
     </div>
     <footer>
         <div></div>
     </footer>
     <style>
-        @media only screen and (max-width:930px){
+        @media only screen and (max-width:1060px){
             #ptoollist::before{
                 content:none;
             }
+        }
 
+        @media only screen and (max-width:930px){
             #psynopsis {
                 flex-direction:column;
             }
@@ -244,7 +318,7 @@
             }
         }
 
-        @media only screen and (max-width:436px){
+        @media only screen and (max-width:567px){
             #ptoollist {
                 justify-content:left;
             }
