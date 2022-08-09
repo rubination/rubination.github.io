@@ -51,7 +51,7 @@ footer div{
 }
 
 footer div::before {
-    content: "Website created by Jake Rubin.";
+    content: "Website created by Jake Rubin";
 }
 
 ::-webkit-scrollbar {
