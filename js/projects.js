@@ -10,6 +10,11 @@ const fzmodal = document.getElementById("pfritzmodal");
 const fzlink = document.getElementById("fritzlink");
 const fzx = document.getElementById("fritzx");
 
+//Demo video modal elements
+const dvmodal = document.getElementById("pdemovidmodal");
+const dvlink = document.getElementById("demovidlink");
+const dvx = document.getElementById("demovidx");
+
 //Current feature global variable
 var currfeat = 1;
 
@@ -141,6 +146,14 @@ function projInit() {
         });
         fzx.addEventListener("click", function() {
             fzmodal.style.display = "none";
+        });
+    }
+    if(dvmodal !== null) {
+        dvlink.addEventListener("click", function() {
+            dvmodal.style.display = "block";
+        });
+        dvx.addEventListener("click", function() {
+            dvmodal.style.display = "none";
         });
     }
 }
