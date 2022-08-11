@@ -10,11 +10,13 @@ const fzmodal = document.getElementById("pfritzmodal");
 const fzlink = document.getElementById("fritzlink");
 const fzx = document.getElementById("fritzx");
 
-//Demo video modal elements
-const dvmodal = document.getElementById("pdemovidmodal");
+//Demo video modal elements / variables / lambdas
 const dvlink = document.getElementById("demovidlink");
-const dvx = document.getElementById("demovidx");
-
+const srcs = [
+    {title : "Batbot", link : "https://www.youtube.com/embed/K7ILOBpgLYQ?autoplay=1"}
+]
+const currTitle = document.getElementById("ptitle").children[0].textContent;
+const searchIndex = (element) => element.title === currTitle;
 //Current feature global variable
 var currfeat = 1;
 
@@ -126,6 +128,36 @@ function jumpToFeat(featnum) {
 }
 
 /**
+ * Creates and appends modal of YouTube video to document
+ */
+function createModal() {
+    //Create modal, add inner divs
+    const modal = document.createElement("div");
+    modal.setAttribute("id", "pdemovidmodal");
+    modal.appendChild(document.createElement("div"));
+    modal.firstChild.appendChild(document.createElement("div"));
+    
+    //Create iframe, add attributes, add to modal
+    const vid = document.createElement("iframe");
+    vid.setAttribute("id","demovid");
+    vid.setAttribute("src",srcs[srcs.findIndex(searchIndex)].link);
+    vid.setAttribute("allow", "autoplay;");
+    vid.setAttribute("allowfullscreen","");
+    modal.firstChild.firstChild.appendChild(vid);
+    
+    //Create X img, add attributes and event listener, add to modal
+    const closeX = document.createElement("img");
+    closeX.setAttribute("id","demovidx");
+    closeX.setAttribute("src","./../img/xicon.png");
+    closeX.addEventListener("click", function(){
+        modal.remove();
+    });
+    modal.appendChild(closeX);
+    
+    document.getElementsByTagName("BODY")[0].appendChild(modal);
+}
+
+/**
  * Initializes event listeners for page elements present on page
  */
 function projInit() {
@@ -148,13 +180,8 @@ function projInit() {
             fzmodal.style.display = "none";
         });
     }
-    if(dvmodal !== null) {
-        dvlink.addEventListener("click", function() {
-            dvmodal.style.display = "block";
-        });
-        dvx.addEventListener("click", function() {
-            dvmodal.style.display = "none";
-        });
+    if(dvlink !== null) {
+        dvlink.addEventListener("click",createModal);
     }
 }
 

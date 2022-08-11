@@ -468,7 +468,7 @@ a {
 }
 
 #pdemovidmodal {
-    display:none;
+    display:block;
     z-index:500;
     position:fixed;
     top:0;
