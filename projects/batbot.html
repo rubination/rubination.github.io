@@ -276,7 +276,7 @@
             <img class="featimg" src="./../img/featbatbot/Password.jpg">
             <img class="featimg" src="./../img/featbatbot/StankyLeg.jpg">
             <img class="featimg" src="./../img/featbatbot/HappyDance.jpg">
-            <img class="featimg" src="./../img/featbatbot/ChoreographyMode.jpg">
+            <img class="featimg" src="./../img/featbatbot/AnotherDance.jpg">
             <img class="featimg" src="./../img/featbatbot/Pet.jpg">
             <img class="featimg" src="./../img/featbatbot/TopView.jpg">
             <div class="featarrow rightarrow">
@@ -307,6 +307,36 @@
             <div class="feat">
                 <h2 class="dash">1/10 &mdash; Sounds via Piezo Buzzer</h2>
                 <h2 class="br">1/10 <br> Sounds via Piezo Buzzer</h2>
+                <p>
+                    Utilizing the Piezo buzzer served two purposes: provide the user with auditory feedback, and provide the robot with personality.  
+                    This was accomplished using one or more instances of CircuitPython's simpleio.tone() function.
+                    In total, there were seven sounds created for this project, stored as single commands or functions.
+                    <br><br>
+                    Click each title to hear the sound it describes:
+                </p>
+                <ol id="soundlist">
+                    <li>
+                        <strong>Standard Tone:</strong> one single tone of 5000Hz, used when a user presses a key within the confines of instruction.
+                    </li><br>
+                    <li>
+                        <strong>Error Tones:</strong> two short tones of 311.3Hz, used when a user has entered an erroneous input.
+                    </li><br>
+                    <li>
+                        <strong>Correct Tones:</strong> five tones conforming to a broken major chord, used when a user enters the correct startup password.
+                    </li><br>
+                    <li>
+                        <strong>Execute Tones:</strong> three tones used when a dance move or series of dance moves is executed.
+                    </li><br>
+                    <li>
+                        <strong>Happy Sound:</strong> four tones used when the Happy Dance (see Feature 9) is activated via "petting" the robot.
+                    </li><br>
+                    <li>
+                        <strong>Happy Ending Sound:</strong> four tones used at the conclusion of the aforementioned Happy Dance.
+                    </li><br>
+                    <li>
+                        <strong>Bat Buzz:</strong> tones interpolating a very small snippet of the Batman theme song, played when the robot is "booting up" after the password sequence.
+                    </li>
+                </ol>
             </div>
             <div class="feat">
                 <h2 class="dash">2/10 &mdash; Text via LCD Display</h2>

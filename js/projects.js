@@ -12,11 +12,27 @@ const fzx = document.getElementById("fritzx");
 
 //Demo video modal elements / variables / lambdas
 const dvlink = document.getElementById("demovidlink");
-const srcs = [
-    {title : "Batbot", link : "https://www.youtube.com/embed/K7ILOBpgLYQ?autoplay=1"}
+const dvsrcs = [
+    {title : "Batbot", link : "https://www.youtube-nocookie.com/embed/K7ILOBpgLYQ?autoplay=1"}
 ]
 const currTitle = document.getElementById("ptitle").children[0].textContent;
 const searchIndex = (element) => element.title === currTitle;
+
+//Sound list elements / variables
+const soundlist = document.querySelectorAll('#soundlist > li > strong');
+const slsrcs = [
+    {title : "Batbot", links: [
+        "./../audio/featbatbot/Standard.wav",
+        "./../audio/featbatbot/Error.wav",
+        "./../audio/featbatbot/Correct.wav",
+        "./../audio/featbatbot/Execute.wav",
+        "./../audio/featbatbot/Happy.wav",
+        "./../audio/featbatbot/HappyEnding.wav",
+        "./../audio/featbatbot/BatBuzz.wav"
+    ]}
+];
+var soundHover = -1;
+
 //Current feature global variable
 var currfeat = 1;
 
@@ -140,7 +156,7 @@ function createModal() {
     //Create iframe, add attributes, add to modal
     const vid = document.createElement("iframe");
     vid.setAttribute("id","demovid");
-    vid.setAttribute("src",srcs[srcs.findIndex(searchIndex)].link);
+    vid.setAttribute("src",dvsrcs[dvsrcs.findIndex(searchIndex)].link);
     vid.setAttribute("allow", "autoplay;");
     vid.setAttribute("allowfullscreen","");
     modal.firstChild.firstChild.appendChild(vid);
@@ -155,6 +171,32 @@ function createModal() {
     modal.appendChild(closeX);
     
     document.getElementsByTagName("BODY")[0].appendChild(modal);
+}
+
+function playSound() {
+    const index = soundHover;
+
+    const audio = document.createElement("audio");
+    const source = document.createElement("source");
+    source.setAttribute("src",slsrcs[slsrcs.findIndex(searchIndex)].links[index]);
+    source.setAttribute("type","audio/wav");
+    audio.appendChild(source);
+
+    audio.addEventListener("loadstart", function(){
+        for(var i = 0; i < soundlist.length; i++) {
+            soundlist[i].removeEventListener("click", playSound);
+        }
+    })
+
+    audio.addEventListener("ended", function(){
+        audio.remove();
+        for(var i = 0; i < soundlist.length; i++) {
+            soundlist[i].addEventListener("click", playSound);
+        }
+    });
+
+    soundlist[index].parentNode.appendChild(audio);
+    audio.play();
 }
 
 /**
@@ -182,6 +224,13 @@ function projInit() {
     }
     if(dvlink !== null) {
         dvlink.addEventListener("click",createModal);
+    }
+    if(soundlist.length > 0) {
+        for(var i = 0; i < soundlist.length; i++) {
+            const n=i;
+            soundlist[i].addEventListener("mouseover", function(){soundHover = n});
+            soundlist[i].addEventListener("click", playSound);
+        }
     }
 }
 

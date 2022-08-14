@@ -520,3 +520,13 @@ a {
 #demovidx:hover {
     filter: invert(41%) sepia(26%) saturate(7295%) hue-rotate(336deg) brightness(113%) contrast(112%);
 }
+
+/* SOUND LIST SECTION */
+
+#soundlist > li > strong {
+    cursor:pointer;
+}
+
+#soundlist audio {
+    display:none;
+}
