@@ -130,7 +130,7 @@
     </div>
     <div id="pgit">
         <a href="https://github.com/rubination/rubination.github.io">
-            <img src="./../img/github.png">
+            <div id="pgitlogo"></div>
             <p>Click here for the Github repository</p>
         </a>
     </div>
@@ -169,7 +169,7 @@
             <img class="featimg" src="./../img/featwebsite/navbar.png">
             <img class="featimg" src="./../img/featwebsite/projshowcase.png">
             <img class="featimg" src="./../img/featwebsite/hobbies.png">
-            <img class="featimg" src="./../img/featwebsite/fritzing.png">
+            <img class="featimg" src="./../img/featwebsite/modal.png">
             <img class="featimg" src="./../img/featwebsite/features.png">
             <div class="featarrow rightarrow">
                 <div class="arrowfill"></div>
@@ -260,19 +260,26 @@
                 </ol>
             </div>
             <div class="feat">
-                <h2 class="dash">4/5 &mdash; Hardware Fritzing</h2>
-                <h2 class="br">4/5 <br> Hardware Fritzing</h2>
+                <h2 class="dash">4/5 &mdash; Modal Windows</h2>
+                <h2 class="br">4/5 <br> Modal Windows</h2>
                 <p>
-                    Only on hardware-inclusive projects, the click of a link displays a modal image with a Fritzing hardware schematic of the project.
-                    This allows me to better visualize the way I built the hardware components of a hardware project.
-                    There are two different design elements used to create the modal image.
+                    Some project pages display modal windows for two occasions: Fritzing hardware schematics and project demo videos.
+                    The Fritzing diagrams allow me to better visualize the way I build the hardware components of a project, and the demo video shows the project in action.
+                    Each of these modal windows are built in a different way, but overall use these building blocks:
                 </p>
                 <ol>
                     <li>
-                        <strong>JS Event Listeners and Functions:</strong> event listeners placed on a link and the modal's close icon trigger functions to display or hide the modal image.
+                        <strong>JS Event Listeners:</strong> event listeners placed on a link and the modal's close icon trigger functions to display or hide the modal image.
                     </li><br>
                     <li>
-                        <strong>CSS Animations:</strong> uses the CSS @keyframes rule to change the vertical position and opacity of the modal image immediately after display to seamlessly fade in the image.
+                        <strong>CSS Animations:</strong> the Fritzing modal uses the CSS @keyframes rule to change the vertical position and opacity of the modal image immediately after display to seamlessly fade in the image.
+                    </li><br>
+                    <li>
+                        <strong>Creating/Appending HTML:</strong> using the JS create createElement(), setAttribute(), and appendChild() functions, the demo video creates and inserts the modal and inserts it into the document.
+                        An event listener on the close icon triggers the remove() function to delete the modal from the document on a click.
+                    </li><br>
+                    <li>
+                        <strong>Embedded YouTube video:</strong> the demo video uses the &lt;iframe&gt; tag within several nested padded &lt;div&gt; tags to display a YouTube video with a fixed aspect ratio.
                     </li>
                 </ol>
             </div>
