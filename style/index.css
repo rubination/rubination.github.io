@@ -88,33 +88,48 @@
     border-bottom:10px solid black;
 }
 
-.hproj div {
+.hproj > div {
     display:flex;
     justify-content:center;
     align-items:center;
     flex-grow:1;
-    overflow:clip;
     background-color:var(--c1);
     height:440px;
     width:33.3%;
     transition:background-color .25s;
 }
 
-.hproj div:hover {
+.hproj > div:hover {
     background-color:var(--c5);
 }
 
-.hproj div img {
-    height:calc(440px * 1.2);
+.hproj > div > div.proj1 {
+    background-image:url("../img/webcode.png");
+}
+
+.hproj > div > div.proj2 {
+    background-image:url("../img/batbot.jpg");
+}
+
+.hproj > div > div.proj3 {
+    background-image:url("../img/covidchecker.png");
+}
+
+.hproj > div > div {
+    background-position:center;
+    background-size: auto 120%;
+    background-repeat:no-repeat;
+    width:100%;
+    height:100%;
     filter:grayscale(1) brightness(150%) opacity(33%);
-    transition:.25s;
+    transition: .25s;
 }
 
-.hproj div:hover img {
-    height:440px;
+.hproj > div:hover > div {
+    background-size:auto 100%;
 }
 
-.hproj div a {
+.hproj > div > a {
     display:flex;
     position:absolute;
     width:calc(33% - 2.5px);
@@ -128,11 +143,11 @@
     text-decoration:none;
 }
 
-.hproj div a:hover {
+.hproj > div > a:hover {
     color:var(--c3);
 }
 
-.hproj div a:active {
+.hproj > div > a:active {
     color: black;
 }
 
@@ -141,7 +156,7 @@
     text-shadow: 4px 4px black;
 }
 
-.hproj div a:active h1 {
+.hproj > div > a:active > h1 {
     text-shadow: 4px 4px var(--c3)
 }
 
@@ -152,23 +167,21 @@
         flex-direction:column;
     }
 
-    .hproj div {
+    .hproj > div {
         width:100%;
         height:200px;
         transition:.25s;
     }
 
-    .hproj div img {
-        width:120%;
-        height:auto;
+    .hproj > div > div {
+        background-size:120% auto;
     }
 
-    .hproj div:hover img {
-        width:100%;
-        height:auto;
+    .hproj > div:hover > div {
+        background-size: 100% auto;
     }
 
-    .hproj div a {
+    .hproj > div a {
         width:100%;
     }
 }
@@ -188,7 +201,7 @@
         font-size:20px;
     }
 
-    .hproj div {
+    .hproj > div {
         height:150px;
     }
 }
