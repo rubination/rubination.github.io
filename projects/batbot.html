@@ -141,7 +141,7 @@
         </style>
     </div>
     <div id="pgit">
-        <a href>
+        <a href="https://github.com/CPEN-291/P1_B_G13">
             <img src="./../img/github.png">
             <p>Click here for the Github repository</p>
         </a>
@@ -310,9 +310,8 @@
                 <p>
                     Utilizing the Piezo buzzer served two purposes: provide the user with auditory feedback, and provide the robot with personality.  
                     This was accomplished using one or more instances of CircuitPython's simpleio.tone() function.
-                    In total, there were seven sounds created for this project, stored as single commands or functions.
-                    <br><br>
-                    Click each title to hear the sound it describes:
+                    In total, there were seven sounds created for this project, stored as single commands or functions
+                    (click each title to hear the sound it describes):
                 </p>
                 <ol id="soundlist">
                     <li>
@@ -349,30 +348,169 @@
             <div class="feat">
                 <h2 class="dash">4/10 &mdash; LED Flashes</h2>
                 <h2 class="br">4/10 <br> LED Flashes</h2>
+                <p>
+                    The four LEDs on the front of the robot allowed for visual feedback and flair.
+                    This was done by accessing the group of pins in the 74HC595 shift register and turning the value of each pin to True or False as needed,
+                        using CircuitPython's time.sleep() function to provide the timing of each sequence.
+                    Two main LED sequences were made for Batbot:
+                </p>
+                <ol>
+                    <li>
+                        <strong>Blink:</strong> all LEDs light up at the same time, stay on for 0.1s, and turn off at the same time.
+                    </li><br>
+                    <li>
+                        <strong>Chase:</strong> each LED lights up and turns off individually from left to right, then right to left.
+                    </li>
+                </ol>
             </div>
             <div class="feat">
                 <h2 class="dash">5/10 &mdash; Passcode Entry</h2>
                 <h2 class="br">5/10 <br> Passcode Entry</h2>
+                <p>
+                    On activation, the robot displays a prompt to enter a password to grant user access.
+                    This was done to add a security feature to our robot, essentially so that only group members could run the code.
+                    The process worked in the following steps:
+                </p>
+                <ol>
+                    <li>
+                        Individual numbers are entered into the program via keypad input. 
+                        When a valid key is pressed, the standard tone plays while the new number is written to display and the previous number is replaced by a '*', mimicking how websites often display passwords to its inputter.
+                        Each number is stored in an array to later be processed.
+                    </li><br>
+                    <li>
+                        When the length of the correct password has been reached, the program no longer checks user input and instead compares the list of inputted numbers to that of the correct password.
+                    </li><br>
+                    <li>
+                        If the password entered is correct, the bat signal appears on the LCD display, the LED slide sequence triggers, and the bat buzz and correct tones play.
+                        The user is informed that they have access to Batbot.
+                    </li><br>
+                    <li>
+                        If the password entered is false, the user is informed via text on LCD that the password entered is incorrect.
+                        The LED blink sequence triggers, the error sound plays, and the password function is recalled for the user to try again.
+                    </li>
+                </ol>
             </div>
             <div class="feat">
                 <h2 class="dash">6/10 &mdash; Individual Dances</h2>
                 <h2 class="br">6/10 <br> Individual Dances</h2>
+                <p>
+                    The primary function of this project was to build a dancing robot, thus individual dances had to be programmed, each with their own callable function.
+                    When prompted, a user can choose one of these dance moves by clicking a number on the keypad.  
+                    The user is then prompted for how many times to repeat the move, and if applicable, which side to perform the dance.
+                    The program stores this information in a tuple, and using a makeshift switch statement (as Python doesn't use switch statements), call the specific dance function and feed the additional information as arguments.
+                    Each dance function rests in a for loop based on the number of repeats, and if applicable has opposite instructions for each side.
+                    When a dance is executed, the LEDs display their Chase sequence and the execute tone plays.
+                    Here are the dance moves we programmed for Batbot:
+                </p>
+                <ol>
+                    <li>
+                        <strong>Shuffle:</strong> this dance is based on the shuffle dance move popularized by the music group LMFAO in 2011.
+                        Two shuffle functions were used: a regular shuffle and a smoother shuffle. 
+                        In the regular shuffle, each leg servo is rotated from side to side in one command, leading to a quick transition.
+                        In the smoother shuffle, the servo angles are changed in small increments, leading to a, by namesake, smoother transition.
+                        In demonstration, the smoother shuffle function is called for this dance.
+                        A GIF of Redfoo of LMFAO dancing in the music video from which this dance originated plays on the LCD during this dance.
+                    </li><br>
+                    <li>
+                        <strong>Stanky Leg:</strong> this dance is based on the dance popularized by the hip hop trio GS Boyz in 2008, and requires an additional left or right leg user input.
+                        The foot servo of the chosen side is rotated outward 50 degrees, and the opposite foot 12 degrees outward. 
+                        The chosen leg is then rotated between 30 degrees outward and 30 degrees inward from reset position.
+                        A GIF of a cat standing on it's hind legs moving side to side with the caption "Stanky Leg" plays during this dance.  
+                        The direction the cat moves depends on which leg is moving, in which the bitmap images are arranged in initial or reverse order.
+                    </li><br>
+                    <li>
+                        <strong>Ballet Shuffle:</strong> this uses the same functions as Shuffle, however Batbot's feet are angled inward 50 degrees from default positions to simulate the robot standing on its toes.
+                        Each shuffle function has an argument isBallet, which if true enacts the feet angling.
+                        In demonstration, the regular shuffle function is called for this dance.
+                    </li><br>
+                    <li>
+                        <strong>Crip Walk:</strong> this dance is based on the dance created by Robert "Sugar Bear" Jackson in the 1970s.
+                        First, the feet reset and the legs rotate inward 50 degrees from reset.  
+                        Then, the left leg and left foot rotate to 50 degrees outward, the right leg 10 degrees out.
+                        This then repeats on the other side.
+                        A GIF of Snoop Dogg, an avid crip walker, dancing plays during this dance.
+                    </li><br>
+                    <li>
+                        <strong>Frog:</strong> this dance mimics the actions of a hopping frog.
+                        It accomplishes this in two steps: the jump and the landing.
+                        For the jump, the legs are rotated outward 25 degrees from reset and the feet outward 35 degrees.
+                        For the landing, the legs rotate to 35 degrees inward from reset and the feet reset.
+                        A delay of 0.15s between the jump and landing ensures a quick jump motion.
+                        A GIF of a frog displays during this dance.
+                    </li><br>
+                    <li>
+                        <strong>Swim:</strong> this dance emulates a swimming motion, specifically that of the breast stroke.
+                        To perform this in four steps, the legs rotate inward 40 degrees from reset, the feet rotate outward 40 degrees, the legs rotate outward 40 degrees from reset, then the feet reset.
+                        A GIF of a swimming corgi displays during this dance.
+                    </li><br>
+                    <li>
+                        <strong>Slide:</strong> this dance causes the robot to slide to the left or to the right, depending on which side is chosen.
+                        The foot of the chosen leg rotates outward incrementally until it is 40 degrees from reset, then quickly resets.
+                        A GIF of a chihuahua walking side to side on it's hind legs plays, going left or right depending on which leg is used.
+                    </li>
+                </ol>
             </div>
             <div class="feat">
                 <h2 class="dash">7/10 &mdash; Demo Mode</h2>
                 <h2 class="br">7/10 <br> Demo Mode</h2>
+                <p>
+                    This mode presents all available dance moves Batbot can perform.
+                    When the user inputs the '*' key, rather than a number, the dance execution function is called with an argument queue of every single dance, repeating 3 times each side (if necessary).
+                    Demo mode is the quickest way to exhibit the base requirement of Batbot: to be a dancing robot.
+                </p><br><br>
             </div>
             <div class="feat">
                 <h2 class="dash">8/10 &mdash; Choreography Mode</h2>
                 <h2 class="br">8/10 <br> Choreography Mode</h2>
+                <p>
+                    Doing one dance at a time is cool, but what if the user wants Batbot to perform several in a row?
+                    This is where choreography mode comes in, accessible by clicking '#' instead of a number on the keypad.
+                    Choreography mode allows the user to input several dances, and collects the tuples in a queue.
+                    Once the user again clicks '#', the queue of dance moves are executed one at a time.
+                    To save storage, individual dance commands input a queue of only one tuple.
+                </p><br><br>
             </div>
             <div class="feat">
                 <h2 class="dash">9/10 &mdash; Petting and Happy Dance</h2>
                 <h2 class="br">9/10 <br> Petting and Happy Dance</h2>
+                <p>
+                    This feature was implemented as an easter egg. 
+                    Part of this dance is displayed in demo mode, but can only be individually accessed via "petting" the robot.
+                    An HC-SR04 sonar located at the top of the bot detects the user's hand, and triggers the following sequence:
+                </p>
+                <ol>
+                    <li>
+                        The happy sound is played via the Piezo buzzer.
+                    </li><br>
+                    <li>
+                        Two rounds of a secret Shock dance execute (this dance is not displayed in demo mode) amongst a happy dog GIF displaying on the LCD.
+                    </li><br>
+                    <li>
+                        Three rounds of the Happy Dance initiate while displaying the same GIF as before.
+                    </li><br>
+                    <li>
+                        The happy ending sound plays, indicating the sequence is over, and the initial prompt to select a dance, choreography mode, or demo mode displays.
+                    </li>
+                </ol>
             </div>
             <div class="feat">
                 <h2 class="dash">10/10 &mdash; Amazing Decor!</h2>
                 <h2 class="br">10/10 <br> Amazing Decor!</h2>
+                <p>
+                    As everyone in our class was tasked with the same project, we thought the decoration of Batbot could set it apart from other projects at an immediate glance.
+                    The top and keypad-less side displays a Batman logo with "man" intentionally crossed out and replaced with "bot", and another Batman logo adorns the front.
+                    However, the decorations do not simply serve aesthetic purposes, but also functional ones:
+                </p>
+                <ol>
+                    <li>
+                        <strong>Circuit cover:</strong> the cardboard box adorned in black and yellow serves the purpose of covering up the circuitry of the project, allowing for it to be neatly stored and unseen.
+                        Additionally, the box gives a sturdy location to attach the keypad.
+                    </li><br>
+                    <li>
+                        <strong>Weight balance:</strong> the cape on the back gave a counterweight to the mass of the LCD, LEDs and other circuitry which hung out the front of the robot.
+                        This was one of the main reasons we were able to use the Batbot moniker.
+                    </li>
+                </ol>
             </div>
         </div>
     </div>
