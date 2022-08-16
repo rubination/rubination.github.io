@@ -19,7 +19,7 @@ const currTitle = document.getElementById("ptitle").children[0].textContent;
 const searchIndex = (element) => element.title === currTitle;
 
 //Sound list elements / variables
-const soundlist = document.getElementById("soundlist").children;
+const soundlist = document.getElementById("soundlist") !== null ? document.getElementById("soundlist").children : null;
 const slsrcs = [
     {title : "Batbot", links: [
         "./../audio/featbatbot/Standard.wav",
@@ -233,7 +233,7 @@ function projInit() {
     if(dvlink !== null) {
         dvlink.addEventListener("click",createModal);
     }
-    if(soundlist.length > 0) {
+    if(soundlist !== null) {
         for(var i = 0; i < soundlist.length; i++) {
             const n=i;
             soundlist[i].addEventListener("mouseover", function(){soundHover = n});
