@@ -116,18 +116,7 @@
             Jake Rubin
         </a>
     </div>
-    <div id="pfeatureimg">
-        <style>
-            #pfeatureimg {
-                background-image:url(./../img/webcode.png);
-                background-size:cover;
-                background-repeat:no-repeat;
-                background-attachment:fixed;
-                background-position-x:center;
-                background-position-y:top;
-            }
-        </style>
-    </div>
+    <div id="pfeatureimg" style="background-image:url(./../img/webcode.png)"></div>
     <div id="pgit">
         <a href="https://github.com/rubination/rubination.github.io">
             <div id="pgitlogo"></div>
@@ -200,18 +189,18 @@
                 </p>
                 <ol>
                     <li>
-                        <strong>Fixed positioning:</strong> uses fixed position, body's margin-top increased to compensate for space of bar.
+                        <strong>Fixed positioning:</strong> uses fixed position, body's <code>margin-top</code> property increased to compensate for space of bar.
                     </li><br>
                     <li>
                         <strong>Collapsable menu:</strong> uses a click event listener to trigger function which shows or hides options and changes overflow properties of body to prevent scrolling.
                         Another JavaScript function closes the "Projects" tab in the event that the collapsable menu closes when it is still open.
                     </li><br>
                     <li>
-                        <strong>Resizing property:</strong> uses the CSS @media rule with the max-width property to show the full menu or collapsable menu at different screen sizes. 
+                        <strong>Resizing property:</strong> uses the CSS <code>@media</code> rule with the <code>max-width</code> property to show the full menu or collapsable menu at different screen sizes. 
                         Another JavaScript function tracks screen size to close the collapsable menu if the screen width becomes wide enough to accomodate the full menu.
                     </li><br>
                     <li>
-                        <strong>Downloadable link:</strong> uses &lt;a&gt; tag's download attribute to download my resume upon the click of the "Resume" button.
+                        <strong>Downloadable link:</strong> uses <code>&lt;a&gt;</code> tag's download attribute to download my resume upon the click of the "Resume" button.
                     </li>
                 </ol>
             </div>
@@ -227,7 +216,7 @@
                         <strong>Tinted images:</strong> uses full grayscale, increased brightness and reduced opacity via CSS filter functions to create an image which can be "tinted" by the background color of the division containing the image.
                     </li><br>
                     <li>
-                        <strong>Link covering image:</strong> uses absolute positioning and CSS calc() function for width to place a link on top of an image within the bounds of the division.
+                        <strong>Link covering image:</strong> uses absolute positioning and CSS <code>calc()</code> function for width to place a link on top of an image within the bounds of the division.
                     </li><br>
                     <li>
                         <strong>Seamless transitions:</strong> uses CSS transitions to smoothly change image height and background color over 0.25 seconds.
@@ -272,14 +261,14 @@
                         <strong>JS Event Listeners:</strong> event listeners placed on a link and the modal's close icon trigger functions to display or hide the modal image.
                     </li><br>
                     <li>
-                        <strong>CSS Animations:</strong> the Fritzing modal uses the CSS @keyframes rule to change the vertical position and opacity of the modal image immediately after display to seamlessly fade in the image.
+                        <strong>CSS Animations:</strong> the Fritzing modal uses the CSS <code>@keyframes</code> rule to change the vertical position and opacity of the modal image immediately after display to seamlessly fade in the image.
                     </li><br>
                     <li>
-                        <strong>Creating/Appending HTML:</strong> using the JS create createElement(), setAttribute(), and appendChild() functions, the demo video creates and inserts the modal and inserts it into the document.
-                        An event listener on the close icon triggers the remove() function to delete the modal from the document on a click.
+                        <strong>Creating/Appending HTML:</strong> using the JS <code>createElement()</code>, <code>setAttribute()</code>, and <code>appendChild()</code> functions, the demo video creates and inserts the modal and inserts it into the document.
+                        An event listener on the close icon triggers the <code>remove()</code> function to delete the modal from the document on a click.
                     </li><br>
                     <li>
-                        <strong>Embedded YouTube video:</strong> the demo video uses the &lt;iframe&gt; tag within several nested padded &lt;div&gt; tags to display a YouTube video with a fixed aspect ratio.
+                        <strong>Embedded YouTube video:</strong> the demo video uses the <code>&lt;iframe&gt;</code> tag within several nested padded <code>&lt;div&gt;</code> tags to display a YouTube video with a fixed aspect ratio.
                     </li>
                 </ol>
             </div>
@@ -299,7 +288,7 @@
                         <strong>Dots:</strong> similarly to the arrows, calls a function which displays the feature corresponding to each dot and updating each arrow and dots as needed.
                     </li><br>
                     <li>
-                        <strong>CSS @media rule:</strong> arrows and dots change places or disappear entirely depending on screen size.
+                        <strong>CSS <code>@media</code> rule:</strong> arrows and dots change places or disappear entirely depending on screen size.
                     </li>
                 </ol>
             </div>

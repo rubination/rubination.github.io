@@ -128,18 +128,7 @@
             Ilam Imayavaramban
         </a>
     </div>
-    <div id="pfeatureimg">
-        <style>
-            #pfeatureimg {
-                background-image:url(./../img/batbot.jpg);
-                background-size:cover;
-                background-repeat:no-repeat;
-                background-attachment:fixed;
-                background-position-x:center;
-                background-position-y:top;
-            }
-        </style>
-    </div>
+    <div id="pfeatureimg" style="background-image:url(./../img/batbot.jpg);"></div>
     <div id="pgit">
         <a href="https://github.com/CPEN-291/P1_B_G13">
             <div id="pgitlogo"></div>
@@ -309,7 +298,7 @@
                 <h2 class="br">1/10 <br> Sounds via Piezo Buzzer</h2>
                 <p>
                     Utilizing the Piezo buzzer served two purposes: provide the user with auditory feedback, and provide the robot with personality.  
-                    This was accomplished using one or more instances of CircuitPython's simpleio.tone() function.
+                    This was accomplished using one or more instances of CircuitPython's <code>simpleio.tone()</code> function.
                     In total, there were seven sounds created for this project, stored as single commands or functions
                     (click each title to hear the sound it describes):
                 </p>
@@ -350,8 +339,8 @@
                 <h2 class="br">4/10 <br> LED Flashes</h2>
                 <p>
                     The four LEDs on the front of the robot allowed for visual feedback and flair.
-                    This was done by accessing the group of pins in the 74HC595 shift register and turning the value of each pin to True or False as needed,
-                        using CircuitPython's time.sleep() function to provide the timing of each sequence.
+                    This was done by accessing the group of pins in the 74HC595 shift register and turning the value of each pin to <code>True</code> or <code>False</code> as needed,
+                        using CircuitPython's <code>time.sleep()</code> function to provide the timing of each sequence.
                     Two main LED sequences were made for Batbot:
                 </p>
                 <ol>

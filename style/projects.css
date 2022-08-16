@@ -73,6 +73,18 @@ a {
     min-height:300px;
     height:25vh;
     max-height:500px;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position-x:center;
+    background-position-y:top;
+}
+
+@supports (-webkit-touch-callout: none) {
+    #pfeatureimg {
+        background-attachment:scroll;
+        background-position-y:center;
+    }
 }
 
 /* GITHUB LINK SECTION */
@@ -98,6 +110,7 @@ a {
 }
 
 #pgitlogo {
+    min-width:22px;
     width:22px;
     height:22px;
     background-image:url(./../img/githublink.png);
