@@ -36,6 +36,12 @@ var soundHover = -1;
 //Current feature global variable
 var currfeat = 1;
 
+//Under construction site
+var underConstruction = [
+    "Automatic Vaccination Status Checker"
+]
+const constSearch = (element) => element === currTitle;
+
 /**
  * Hides current feature and displays the chronologically next feature
  */
@@ -207,10 +213,27 @@ function playSound() {
     audio.play();
 }
 
+function constructionWindow() {
+    const popup = document.createElement("div");
+    popup.setAttribute("id", "constructionPopup");
+
+    const popupX = document.createElement("img");
+    popupX.setAttribute("src", "./../img/xicon.png");
+    popupX.addEventListener("click", function() {
+        popup.remove();
+    })
+
+    popup.appendChild(popupX);
+    document.getElementsByTagName("BODY")[0].appendChild(popup);
+}
+
 /**
  * Initializes event listeners for page elements present on page
  */
 function projInit() {
+    if(underConstruction.findIndex(constSearch) !== -1) {
+        constructionWindow();
+    }
     if(rightarrows.length > 0) {
         rightarrows[0].addEventListener("click", nextFeat);
         rightarrows[1].addEventListener("click", nextFeat);
