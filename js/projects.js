@@ -19,7 +19,7 @@ const currTitle = document.getElementById("ptitle").children[0].textContent;
 const searchIndex = (element) => element.title === currTitle;
 
 //Sound list elements / variables
-const soundlist = document.querySelectorAll('#soundlist > li > strong');
+const soundlist = document.getElementById("soundlist").children;
 const slsrcs = [
     {title : "Batbot", links: [
         "./../audio/featbatbot/Standard.wav",
@@ -173,21 +173,28 @@ function createModal() {
     document.getElementsByTagName("BODY")[0].appendChild(modal);
 }
 
+/**
+ * Creates and plays audio source
+ */
 function playSound() {
+    //Get index of sound to play
     const index = soundHover;
 
+    //Create and set attributes of audio and source elements
     const audio = document.createElement("audio");
     const source = document.createElement("source");
     source.setAttribute("src",slsrcs[slsrcs.findIndex(searchIndex)].links[index]);
     source.setAttribute("type","audio/wav");
     audio.appendChild(source);
 
+    //When audio begins to load, remove all event listeners
     audio.addEventListener("loadstart", function(){
         for(var i = 0; i < soundlist.length; i++) {
             soundlist[i].removeEventListener("click", playSound);
         }
     })
 
+    //When audio ends, remove audio component from document and add back event listeners
     audio.addEventListener("ended", function(){
         audio.remove();
         for(var i = 0; i < soundlist.length; i++) {
@@ -195,7 +202,8 @@ function playSound() {
         }
     });
 
-    soundlist[index].parentNode.appendChild(audio);
+    //Append audio to document and play audio
+    soundlist[index].parentElement.appendChild(audio);
     audio.play();
 }
 

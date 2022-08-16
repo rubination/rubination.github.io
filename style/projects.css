@@ -440,8 +440,12 @@ a {
 }
 
 .feat ol {
-    margin:20px 0px 40px 0px;
+    margin:20px 0px 16px 0px;
     list-style-position:inside;
+}
+
+.feat ol li {
+    margin-bottom:24px;
 }
 
 .feat ol li::marker {

@@ -180,8 +180,8 @@
                     </tr>
                     <tr>
                         <td>1</td>
-                        <td>Adafruit LCD Display</td>
-                        <td>1.44" TFT Breakout</td>
+                        <td>Adafruit 1.44" TFT Breakout Liquid Crystal Display</td>
+                        <td>ST7735R</td>
                     </tr>
                     <tr>
                         <td>1</td>
@@ -305,34 +305,76 @@
                 <ol id="soundlist">
                     <li>
                         <strong>Standard Tone:</strong> one single tone of 5000Hz, used when a user presses a key within the confines of instruction.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Error Tones:</strong> two short tones of 311.3Hz, used when a user has entered an erroneous input.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Correct Tones:</strong> five tones conforming to a broken major chord, used when a user enters the correct startup password.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Execute Tones:</strong> three tones used when a dance move or series of dance moves is executed.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Happy Sound:</strong> four tones used when the Happy Dance (see Feature 9) is activated via "petting" the robot.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Happy Ending Sound:</strong> four tones used at the conclusion of the aforementioned Happy Dance.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Bat Buzz:</strong> tones interpolating a very small snippet of the Batman theme song, played when the robot is "booting up" after the password sequence.
                     </li>
                 </ol>
             </div>
             <div class="feat">
-                <h2 class="dash">2/10 &mdash; Text via LCD Display</h2>
-                <h2 class="br">2/10 <br> Text via LCD Display</h2>
+                <h2 class="dash">2/10 &mdash; Text via LCD</h2>
+                <h2 class="br">2/10 <br> Text via LCD</h2>
+                <p>
+                    In order to give the user prompts, we needed to display text on the liquid crystal display (LCD).
+                    To fit the theme of Batbot, this text displays on a black box with a yellow border.
+                    The function used to achieve this uses a string argument of the text to display, and consists of four processes:
+                </p>
+                <ol>
+                    <li>
+                        <strong>Set Up Context:</strong> create an empty group of sprites to be appended to, and set it to display on the screen.
+                    </li>
+                    <li>
+                        <strong>Create Yellow Border:</strong> create a 128 by 128 pixel bitmap and a one-colour palette of yellow.
+                        Create a sprite with the bitmap and palette and append it to the group.
+                        At this point it doesn't yet look like a border.
+                    </li>
+                    <li>
+                        <strong>Create Inner Box:</strong> create a 108 by 108 bitmap and a black palette, creating and appending a sprite in the same way, making sure to center.
+                        This displays on top of the yellow background, creating the yellow border effect.
+                    </li>
+                    <li>
+                        <strong>Display Text:</strong> taking the string argument, create a label via <code>adafruit_display_text.label</code> of white text, and display within the dimensions of the inner box.
+                    </li>
+                </ol>
             </div>
             <div class="feat">
-                <h2 class="dash">3/10 &mdash; GIFs via LCD Display</h2>
-                <h2 class="br">3/10 <br> GIFs via LCD Display</h2>
+                <h2 class="dash">3/10 &mdash; GIFs via LCD</h2>
+                <h2 class="br">3/10 <br> GIFs via LCD</h2>
+                <p>
+                    Not only does Batbot's LCD display text, but it can also display bitmap images.
+                    However, it's enticing if the images can move with the robot rather than remaining constant.
+                    Therefore, to simulate a GIF, we split GIFs into several bitmap images and dispersed calls to display these images throughout our dance sequences.
+                    We displayed these images on the LCD in four steps:
+                </p>
+                <ol>
+                    <li>
+                        <strong>Setup Source:</strong> using the <code>displayio.OnDiskBitmap()</code> function, the source of the image to display, passed as an argument to the function, can be used to access the bitmap image.
+                    </li>
+                    <li>
+                        <strong>Create TileGrid:</strong> create a tile grid to hold the bitmap image in the correct shape.
+                    </li>
+                    <li>
+                        <strong>Create Group</strong> create a group of sprites and append the tile grid to the group.
+                    </li>
+                    <li>
+                        <strong>Display Image:</strong> finally, display the group on the LCD.
+                    </li>
+                </ol>
             </div>
             <div class="feat">
                 <h2 class="dash">4/10 &mdash; LED Flashes</h2>
@@ -346,7 +388,7 @@
                 <ol>
                     <li>
                         <strong>Blink:</strong> all LEDs light up at the same time, stay on for 0.1s, and turn off at the same time.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Chase:</strong> each LED lights up and turns off individually from left to right, then right to left.
                     </li>
@@ -365,14 +407,14 @@
                         Individual numbers are entered into the program via keypad input. 
                         When a valid key is pressed, the standard tone plays while the new number is written to display and the previous number is replaced by a '*', mimicking how websites often display passwords to its inputter.
                         Each number is stored in an array to later be processed.
-                    </li><br>
+                    </li>
                     <li>
                         When the length of the correct password has been reached, the program no longer checks user input and instead compares the list of inputted numbers to that of the correct password.
-                    </li><br>
+                    </li>
                     <li>
                         If the password entered is correct, the bat signal appears on the LCD display, the LED slide sequence triggers, and the bat buzz and correct tones play.
                         The user is informed that they have access to Batbot.
-                    </li><br>
+                    </li>
                     <li>
                         If the password entered is false, the user is informed via text on LCD that the password entered is incorrect.
                         The LED blink sequence triggers, the error sound plays, and the password function is recalled for the user to try again.
@@ -399,26 +441,26 @@
                         In the smoother shuffle, the servo angles are changed in small increments, leading to a, by namesake, smoother transition.
                         In demonstration, the smoother shuffle function is called for this dance.
                         A GIF of Redfoo of LMFAO dancing in the music video from which this dance originated plays on the LCD during this dance.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Stanky Leg:</strong> this dance is based on the dance popularized by the hip hop trio GS Boyz in 2008, and requires an additional left or right leg user input.
                         The foot servo of the chosen side is rotated outward 50 degrees, and the opposite foot 12 degrees outward. 
                         The chosen leg is then rotated between 30 degrees outward and 30 degrees inward from reset position.
                         A GIF of a cat standing on it's hind legs moving side to side with the caption "Stanky Leg" plays during this dance.  
                         The direction the cat moves depends on which leg is moving, in which the bitmap images are arranged in initial or reverse order.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Ballet Shuffle:</strong> this uses the same functions as Shuffle, however Batbot's feet are angled inward 50 degrees from default positions to simulate the robot standing on its toes.
                         Each shuffle function has an argument isBallet, which if true enacts the feet angling.
                         In demonstration, the regular shuffle function is called for this dance.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Crip Walk:</strong> this dance is based on the dance created by Robert "Sugar Bear" Jackson in the 1970s.
                         First, the feet reset and the legs rotate inward 50 degrees from reset.  
                         Then, the left leg and left foot rotate to 50 degrees outward, the right leg 10 degrees out.
                         This then repeats on the other side.
                         A GIF of Snoop Dogg, an avid crip walker, dancing plays during this dance.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Frog:</strong> this dance mimics the actions of a hopping frog.
                         It accomplishes this in two steps: the jump and the landing.
@@ -426,12 +468,12 @@
                         For the landing, the legs rotate to 35 degrees inward from reset and the feet reset.
                         A delay of 0.15s between the jump and landing ensures a quick jump motion.
                         A GIF of a frog displays during this dance.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Swim:</strong> this dance emulates a swimming motion, specifically that of the breast stroke.
                         To perform this in four steps, the legs rotate inward 40 degrees from reset, the feet rotate outward 40 degrees, the legs rotate outward 40 degrees from reset, then the feet reset.
                         A GIF of a swimming corgi displays during this dance.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Slide:</strong> this dance causes the robot to slide to the left or to the right, depending on which side is chosen.
                         The foot of the chosen leg rotates outward incrementally until it is 40 degrees from reset, then quickly resets.
@@ -470,13 +512,13 @@
                 <ol>
                     <li>
                         The happy sound is played via the Piezo buzzer.
-                    </li><br>
+                    </li>
                     <li>
                         Two rounds of a secret Shock dance execute (this dance is not displayed in demo mode) amongst a happy dog GIF displaying on the LCD.
-                    </li><br>
+                    </li>
                     <li>
                         Three rounds of the Happy Dance initiate while displaying the same GIF as before.
-                    </li><br>
+                    </li>
                     <li>
                         The happy ending sound plays, indicating the sequence is over, and the initial prompt to select a dance, choreography mode, or demo mode displays.
                     </li>
@@ -494,7 +536,7 @@
                     <li>
                         <strong>Circuit cover:</strong> the cardboard box adorned in black and yellow serves the purpose of covering up the circuitry of the project, allowing for it to be neatly stored and unseen.
                         Additionally, the box gives a sturdy location to attach the keypad.
-                    </li><br>
+                    </li>
                     <li>
                         <strong>Weight balance:</strong> the cape on the back gave a counterweight to the mass of the LCD, LEDs and other circuitry which hung out the front of the robot.
                         This was one of the main reasons we were able to use the Batbot moniker.
