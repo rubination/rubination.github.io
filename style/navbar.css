@@ -36,7 +36,7 @@
     border-right: 10px solid black;
     text-align:center;
     font-family: var(--headerfont);
-    overflow:clip;
+    overflow:hidden;
 }
 
 .navitem{
@@ -185,7 +185,7 @@ a.navitem:active {
     right:0;
     width:100%;
     height:100vh;
-    overflow:clip;
+    overflow:hidden;
 }
 
 #projspan {

@@ -25,7 +25,7 @@ function openHobby() {
     hobbyheaders[index].style.cursor = "default";
 
     hobbytext[index].style.display = "block";
-    hobbytext[index].style.overflowY = "clip";
+    hobbytext[index].style.overflowY = "hidden";
     hobbytext[index].style.opacity = 0;
     hobbytext[index].style.height = 0;
 
@@ -68,7 +68,7 @@ function closeHobby() {
 
     hobbyheaders[index].style.cursor = "default";
 
-    hobbytext[index].style.overflowY = "clip";
+    hobbytext[index].style.overflowY = "hidden";
     hobbytext[index].style.opacity = 1;
     hobbytext[index].style.height = "300px";
     
@@ -111,11 +111,11 @@ function closeOldOpenNewHobby() {
     hobbyheaders[newIndex].style.backgroundColor = "var(--c5)";
     hobbyheaders[newIndex].style.cursor = "default";
 
-    hobbytext[oldIndex].style.overflowY = "clip";
+    hobbytext[oldIndex].style.overflowY = "hidden";
     hobbytext[oldIndex].style.opacity = 1;
     hobbytext[oldIndex].style.height = "300px";
     hobbytext[newIndex].style.display = "block";
-    hobbytext[newIndex].style.overflowY = "clip";
+    hobbytext[newIndex].style.overflowY = "hidden";
     hobbytext[newIndex].style.opacity = 0;
     hobbytext[newIndex].style.height = 0;
 

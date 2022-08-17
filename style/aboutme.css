@@ -9,7 +9,7 @@ body > div:nth-child(2) {
     width:calc(100vw / 3 + 10px);
     max-width:calc((100vh - 74px) * 4 / 3);
     justify-content:center;
-    overflow:clip;
+    overflow:hidden;
     height:auto;
     border-right:10px solid black;
     background-image:url(./../img/aboutmeprofile.jpg);
@@ -105,7 +105,7 @@ body > div:nth-child(2) {
 }
 
 .aemaillink span {
-    overflow-x:clip;
+    overflow-x:hidden;
     width:fit-content;
     padding-right:15px;
 }
@@ -153,12 +153,12 @@ body > div:nth-child(2) {
 
 .ahobby:nth-child(2) {
     border-radius:15px 15px 0px 0px;
-    overflow:clip;
+    overflow:hidden;
 }
 
 .ahobby:last-child {
     border-radius:0px 0px 15px 15px;
-    overflow:clip;
+    overflow:hidden;
 }
 
 .ahobby:last-child .hobbytext {

@@ -27,7 +27,8 @@
 
 body {
     background-color:black;
-    overflow-x:clip;
+    overflow-x:hidden;
+    -webkit-font-smoothing:subpixel-antialiased;
 }
 
 body > div {

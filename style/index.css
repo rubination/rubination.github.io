@@ -4,7 +4,7 @@
     display:flex;
     height:600px;
     justify-content:center;
-    overflow:clip;
+    overflow:hidden;
     background-color:black;
 }
 
@@ -17,7 +17,7 @@
     background-position-x:center;
     filter:brightness(75%);
     box-shadow:0 0 50px 50px black inset;
-    overflow:clip;
+    overflow:hidden;
 }
 
 .hwelcometext {

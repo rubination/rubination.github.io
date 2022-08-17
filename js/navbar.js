@@ -25,7 +25,7 @@ function menu() {
         closedburger.style.display = "none";
         openburger.style.display = "block";
         title.style.borderBottom = "10px solid black";
-        body.style.overflowY = "clip";
+        body.style.overflowY = "hidden";
     }
     else {
         openburger.style.display = "none";
