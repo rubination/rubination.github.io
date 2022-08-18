@@ -70,7 +70,7 @@ function closeHobby() {
 
     hobbytext[index].style.overflowY = "hidden";
     hobbytext[index].style.opacity = 1;
-    hobbytext[index].style.height = "300px";
+    hobbytext[index].style.height = hobbyHeight + 'px';
     
     hobbyOpen = -1;
 
@@ -113,7 +113,7 @@ function closeOldOpenNewHobby() {
 
     hobbytext[oldIndex].style.overflowY = "hidden";
     hobbytext[oldIndex].style.opacity = 1;
-    hobbytext[oldIndex].style.height = "300px";
+    hobbytext[oldIndex].style.height = hobbyHeight + 'px';
     hobbytext[newIndex].style.display = "block";
     hobbytext[newIndex].style.overflowY = "hidden";
     hobbytext[newIndex].style.opacity = 0;
