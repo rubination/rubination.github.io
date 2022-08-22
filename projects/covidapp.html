@@ -310,22 +310,57 @@
             <div class="feat">
                 <h2 class="dash">1/8 &mdash; Start-Up via Ultrasonic Sensor</h2>
                 <h2 class="br">1/8 <br> Start-Up via Ultrasonic Sensor</h2>
+                <p>
+                    Upon opening the application, the user is greeted with a waiting screen.
+                    In effect, the application waits for a user to come within range of the computer and hardware to begin the screening process.
+                    The HC-SR04 sonar, via the Johnny-Five hardware libraries, is assigned an event listener. 
+                    On a change of reading, the back-end checks if a person is within 50 centimeters of the computer, and changes a global boolean to reflect this change.
+                    Meanwhile, the front-end sends get requests to the back-end via Axios.
+                    The back-end, via Express.js, handles requests and returns the aforementioned boolean.
+                    When the front-end receives the value <code>true</code>, a new page displays, starting the screening.
+                </p>
             </div>
             <div class="feat">
                 <h2 class="dash">2/8 &mdash; Questionnaire via Buttons</h2>
                 <h2 class="br">2/8 <br> Questionnaire via Buttons</h2>
+                <p>
+                    The first thing a user must do is answer a series of questions regarding potential symptoms or close contact.
+                    However, instead of clicking a yes or no button on the screen, the user must instead press physical buttons.
+                    Similarly to the HC-SR04 sonar, each button had an event listener attached, which on a click sets one of two booleans to true for 100ms.
+                    Another get request pulls the two boolean values.  
+                    If "no" is selected as an answer, the screening process would abruptly end.
+                    If "yes" is selected, the next question is displayed.  
+                    After all questions have been displayed and "yes" has been answered for all, the front-end navigates to the next part of the process.
+                </p>
             </div>
             <div class="feat">
                 <h2 class="dash">3/8 &mdash; Temperature Measurement</h2>
                 <h2 class="br">3/8 <br> Temperature Measurement</h2>
+                <p>
+                    Next, the user must measure their temperature using a body temperature probe thermometer.
+                    The user is instructed to sanitize the thermometer, with a GIF displaying the example.
+                    After clicking a button to continue, the user is then told to play the thermometer on the underside of their elbow with a new GIF.
+                    Continuing, the user holds the thermometer in place for 30 seconds, and the temperature measurement takes place.
+                    In the same way as the previous two features, the value is recorded via an event-listener-called function and transfered via a get request.
+                    After 30 seconds, the result displays on the screen.
+                    If the temperature value is too high, the user is not permitted to continue.
+                    A timeout function triggers the navigation to the next page, which depends on the above result.
+                </p>
             </div>
             <div class="feat">
                 <h2 class="dash">4/8 &mdash; ID Scans</h2>
                 <h2 class="br">4/8 <br> ID Scans</h2>
             </div>
             <div class="feat">
-                <h2 class="dash">5/8 &mdash; Access Granting</h2>
-                <h2 class="br">5/8 <br> Access Granting</h2>
+                <h2 class="dash">5/8 &mdash; Granting Access</h2>
+                <h2 class="br">5/8 <br> Granting Access</h2>
+                <p>
+                    Throughout this process, there are several times when access can be denied: failed questionnaire, high temperature, invalid ID, or unvaccinated status via ID.
+                    In these cases, the front-end will navigate to the "Access Denied" screen, and after timeout back to the waiting page.
+                    However, if the user passes the screening, the front-end displays the "Access Granted" page.
+                    At the same time, a get request sends which triggers a servo motor to rotate, simulating the opening of a door as if the person can now enter whichever building employs this system.
+                    On a 5 second timeout, the front-end then signals the back-end to return the servo back to it's original location, closing the hypothetical door, and returning to the waiting page to start another cycle.
+                </p>
             </div>
             <div class="feat">
                 <h2 class="dash">6/8 &mdash; Admin Login</h2>
