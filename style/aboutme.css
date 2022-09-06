@@ -12,7 +12,7 @@ body > div:nth-child(2) {
     overflow:hidden;
     height:auto;
     border-right:10px solid black;
-    background-image:url(./../img/aboutmeprofile.jpg);
+    background-image:url(../img/aboutmehiking.jpg);
     background-attachment:fixed;
     background-repeat: no-repeat;
     background-position-x: calc((100vw / 6) - (100vh * 2 / 3));

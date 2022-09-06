@@ -10,12 +10,12 @@
 
 @font-face {
     font-family: Strasua;
-    src: url(./../font/strasua.ttf);
+    src: url(../font/strasua.ttf);
 }
 
 @font-face {
     font-family: "Futura Medium";
-    src: url(./../font/futura\ medium\ bt.ttf);
+    src: url(../font/futura\ medium\ bt.ttf);
 }
 
 * {
@@ -86,49 +86,49 @@ footer div::before {
 }
 
 ::-webkit-scrollbar-button:single-button:vertical:decrement {
-    background-image:url(./../img/scrollbar/scrollarrowup.png);
+    background-image:url(../img/scrollbar/scrollarrowup.png);
 }
 
 ::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
-    background-image:url(./../img/scrollbar/scrollarrowuphover.png);
+    background-image:url(../img/scrollbar/scrollarrowuphover.png);
 }
 
 ::-webkit-scrollbar-button:single-button:vertical:decrement:active {
-    background-image:url(./../img/scrollbar/scrollarrowupactive.png);
+    background-image:url(../img/scrollbar/scrollarrowupactive.png);
 }
 
 ::-webkit-scrollbar-button:single-button:vertical:increment {
-    background-image:url(./../img/scrollbar/scrollarrowdown.png);
+    background-image:url(../img/scrollbar/scrollarrowdown.png);
 }
 
 ::-webkit-scrollbar-button:single-button:vertical:increment:hover {
-    background-image:url(./../img/scrollbar/scrollarrowdownhover.png);
+    background-image:url(../img/scrollbar/scrollarrowdownhover.png);
 }
 
 ::-webkit-scrollbar-button:single-button:vertical:increment:active {
-    background-image:url(./../img/scrollbar/scrollarrowdownactive.png);
+    background-image:url(../img/scrollbar/scrollarrowdownactive.png);
 }
 
 ::-webkit-scrollbar-button:single-button:horizontal:decrement {
-    background-image:url(./../img/scrollbar/scrollarrowleft.png);
+    background-image:url(../img/scrollbar/scrollarrowleft.png);
 }
 
 ::-webkit-scrollbar-button:single-button:horizontal:decrement:hover {
-    background-image:url(./../img/scrollbar/scrollarrowlefthover.png);
+    background-image:url(../img/scrollbar/scrollarrowlefthover.png);
 }
 
 ::-webkit-scrollbar-button:single-button:horizontal:decrement:active {
-    background-image:url(./../img/scrollbar/scrollarrowleftactive.png);
+    background-image:url(../img/scrollbar/scrollarrowleftactive.png);
 }
 
 ::-webkit-scrollbar-button:single-button:horizontal:increment {
-    background-image:url(./../img/scrollbar/scrollarrowright.png);
+    background-image:url(../img/scrollbar/scrollarrowright.png);
 }
 
 ::-webkit-scrollbar-button:single-button:horizontal:increment:hover {
-    background-image:url(./../img/scrollbar/scrollarrowrighthover.png);
+    background-image:url(../img/scrollbar/scrollarrowrighthover.png);
 }
 
 ::-webkit-scrollbar-button:single-button:horizontal:increment:active {
-    background-image:url(./../img/scrollbar/scrollarrowrightactive.png);
+    background-image:url(../img/scrollbar/scrollarrowrightactive.png);
 }

@@ -22,13 +22,13 @@ const searchIndex = (element) => element.title === currTitle;
 const soundlist = document.getElementById("soundlist") !== null ? document.getElementById("soundlist").children : null;
 const slsrcs = [
     {title : "Batbot", links: [
-        "./../audio/featbatbot/Standard.wav",
-        "./../audio/featbatbot/Error.wav",
-        "./../audio/featbatbot/Correct.wav",
-        "./../audio/featbatbot/Execute.wav",
-        "./../audio/featbatbot/Happy.wav",
-        "./../audio/featbatbot/HappyEnding.wav",
-        "./../audio/featbatbot/BatBuzz.wav"
+        "../audio/featbatbot/Standard.wav",
+        "../audio/featbatbot/Error.wav",
+        "../audio/featbatbot/Correct.wav",
+        "../audio/featbatbot/Execute.wav",
+        "../audio/featbatbot/Happy.wav",
+        "../audio/featbatbot/HappyEnding.wav",
+        "../audio/featbatbot/BatBuzz.wav"
     ]}
 ];
 var soundHover = -1;
@@ -37,9 +37,7 @@ var soundHover = -1;
 var currfeat = 1;
 
 //Under construction site
-var underConstruction = [
-    "Automatic Vaccination Status Checker"
-]
+var underConstruction = []
 const constSearch = (element) => element === currTitle;
 
 /**
@@ -170,7 +168,7 @@ function createModal() {
     //Create X img, add attributes and event listener, add to modal
     const closeX = document.createElement("img");
     closeX.setAttribute("id","demovidx");
-    closeX.setAttribute("src","./../img/xicon.png");
+    closeX.setAttribute("src","../img/xicon.png");
     closeX.addEventListener("click", function(){
         modal.remove();
     });
@@ -218,7 +216,7 @@ function constructionWindow() {
     popup.setAttribute("id", "constructionPopup");
 
     const popupX = document.createElement("img");
-    popupX.setAttribute("src", "./../img/xicon.png");
+    popupX.setAttribute("src", "../img/xicon.png");
     popupX.addEventListener("click", function() {
         popup.remove();
     })

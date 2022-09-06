@@ -12,7 +12,7 @@
     z-index:10;
     width:1000px;
     height:600px;
-    background-image:url(./../img/profile.jpg);
+    background-image:url(../img/profile.jpg);
     background-size: 1000px auto;
     background-position-x:center;
     filter:brightness(75%);
