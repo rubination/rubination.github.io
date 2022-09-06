@@ -276,14 +276,14 @@
             <div class="featarrow leftarrow disabledarrow">
                 <div class="arrowfill"></div>
             </div>
-            <img class="featimg" src="./../img/whitefillin.png">
-            <img class="featimg" src="./../img/whitefillin.png">
-            <img class="featimg" src="./../img/whitefillin.png">
-            <img class="featimg" src="./../img/whitefillin.png">
-            <img class="featimg" src="./../img/whitefillin.png">
-            <img class="featimg" src="./../img/whitefillin.png">
-            <img class="featimg" src="./../img/whitefillin.png">
-            <img class="featimg" src="./../img/whitefillin.png">
+            <img class="featimg border" src="./../img/featcovidapp/WaitingPage.png">
+            <img class="featimg" src="./../img/featcovidapp/Questionnaire.png">
+            <img class="featimg" src="./../img/featcovidapp/Instructions.png">
+            <img class="featimg" src="./../img/featcovidapp/VaccinationCardScan.png">
+            <img class="featimg" src="./../img/featcovidapp/Access.png">
+            <img class="featimg" src="./../img/featcovidapp/AdminLogin.png">
+            <img class="featimg" src="./../img/featcovidapp/AdminDashboard.png">
+            <img class="featimg" src="./../img/featcovidapp/AdminDashboard.png">
             <div class="featarrow rightarrow">
                 <div class="arrowfill"></div>
             </div>
@@ -350,6 +350,30 @@
             <div class="feat">
                 <h2 class="dash">4/8 &mdash; ID Scans</h2>
                 <h2 class="br">4/8 <br> ID Scans</h2>
+                <p>
+                    One of the last things a user must do is scan their vaccination card and government ID.
+                    Due to user privacy, we didn't build a way of scanning actual IDs, but we substituted via custom QR codes.
+                    npm's <code>react-qr-reader</code> component was used to read a QR code from the user's webcam, showing the webcam footage on the screen via the <code>&lt;QrReader&gt;</code> tag.
+                    The QR codes are then read and the string result is sent via a callback function and then a post request to the back-end to parse.
+                    Each set of identification scans had separate purposes and associated functions.
+                </p>
+                <ol>
+                    <li>
+                        <strong>Vaccination Card:</strong> this QR code contains the first and last names of the individual, and the vaccination status, and the associated parser turns the resulting string into an object.
+                        The back-end then checks if the card itself is valid by checking if it matches an ID in a database of cards in a different file.
+                        If the vaccination card is valid, and the vaccination status is set to <code>true</code>, the front-end navigates to the next ID scan.  
+                        Otherwise, access is denied.
+                    </li>
+                    <li>
+                        <strong>Government ID:</strong> this code contains the first and last names as well, coded in a more government-style format.
+                        The parser grabs these names, then checks another database of user information, grabbing the user's email if the user has previously registered.
+                        If the user's name matches that of the vaccination card, and the user is already registered for the day, access is finally granted as no more steps need to be taken.
+                        If the user's name matches but the user hasn't been registered yet that day, the user must input their email.
+                        This email is then included with the vaccination ID and name of the user to add to the user information database under the date they used this tool.
+                        Once the user's info has been added, access is granted.
+                        If user's name doesn't match, access is denied.
+                    </li>
+                </ol>
             </div>
             <div class="feat">
                 <h2 class="dash">5/8 &mdash; Granting Access</h2>
@@ -365,14 +389,38 @@
             <div class="feat">
                 <h2 class="dash">6/8 &mdash; Admin Login</h2>
                 <h2 class="br">6/8 <br> Admin Login</h2>
+                <p>
+                    All previous entries have discussed how a regular user would interact with this project.
+                    The rest of these entries deal with how the administrative team (the four of us who worked on this project) can use the data collected.
+                    However, since not everyone is allowed access, a login system was used in order to access the administrative dashboard.
+                    This process was done using HTML forms, with inputs for username and password.
+                    When submitted a very quick post request checked if both username and password were valid.
+                    If they were valid, the admin would gain access to the dashboard, otherwise a message would appear under the form informing the inputter of the incorrect information.
+                </p>
             </div>
             <div class="feat">
                 <h2 class="dash">7/8 &mdash; Access Graph</h2>
                 <h2 class="br">7/8 <br> Access Graph</h2>
+                <p>
+                    The admin dashboard can be split into two parts; this is the first part (on the left).
+                    The graph is created using npm's <code>recharts</code> library, specifically component for a line graph.
+                    The data for this graph is taken from the user information database mentioned in Feature 4.
+                    As this database groups users based on the day they access the application, the back-end compiles the number of people who accessed the graph each day and sends the data to the front-end to be used by the graph.
+                    Contained in a <code>&lt;ResponsiveContainer&gt;</code> element, when you hover over each dot on the graph, the <code>&lt;Tooltip&gt;</code> element displays a small box with the specific datum.
+                    An administrator using this application may want to know which individual days or days of the week are busiest or most inactive.
+                </p>
             </div>
             <div class="feat">
                 <h2 class="dash">8/8 &mdash; Mass Email</h2>
                 <h2 class="br">8/8 <br> Mass Email</h2>
+                <p>
+                    The second part of the admin dashboard is the mass email feature (on the right).
+                    This feature is extremely important to an administrator, as if there is a COVID breakout in the location in which this app is used, the admin can send an email to everyone who may be affected on the day contact with the virus occured.
+                    When the "send mass email" button is clicked, a callback function sends a post request to the back-end.
+                    The back-end first gathers an access list of individuals' emails from the date sent in the post request.
+                    An object is then organized with to, from, subject, text, and HTML sections; the to: section contains the previously created list, and the HTML: section effectively the text: section with formatting HTML tags included in the string.
+                    Finally, <code>@sendgrid/mail</code> is employed to send multiple messages to each of the emails included in the list.
+                </p>
             </div>
         </div>
     </div>
