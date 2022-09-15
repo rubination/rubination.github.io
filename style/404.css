@@ -6,14 +6,14 @@
     flex-direction:column;
     row-gap:20px;
     align-items:center;
+    justify-content:center;
     border-bottom:none;
 }
 
 #frenchman {
-    width:750px;
+    width:1000px;
     max-height:80%;
     max-width:80%;
-    margin-top:20px;
     border:10px solid black;
 }
 
