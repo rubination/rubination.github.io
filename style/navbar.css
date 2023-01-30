@@ -210,13 +210,11 @@ body {
     }
 }
 
-@media only screen and (max-width:328px){
+@media only screen and (max-width:347px){
     body {
         margin-top:106px;
     }
-}
 
-@media only screen and (max-width:328px){
     #grillmarks {
         min-height:108px;
     }

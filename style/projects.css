@@ -3,6 +3,10 @@ a {
     color:var(--c1);
 }
 
+a:hover:not(#navbar a) {
+    color:var(--c5)
+}
+
 /* TITLE SECTION */
 
 #ptitle {
@@ -18,17 +22,93 @@ a {
     font-size:30px;
 }
 
-#ptitle p {
+#ptitle > p {
     font-weight:600;
 }
 
-#ptitle h1 {
+#ptitle > h1 {
     transition: font-size .25s;
 }
 
+#ptitle > h1:not(:first-child) {
+    display:none;
+}
+
 @media only screen and (max-width:500px){
-    #ptitle h1 {
+    #ptitle > h1 {
         font-size:1.5em;
+    }
+}
+
+/* PROJECT LIST SECTION */
+
+#pfiller {
+    display:flex;
+    flex-direction:column;
+    min-height:calc(100vh - 255px);
+    height:fit-content;
+    background-color:var(--c2);
+    transition: height .25s;
+}
+
+#plistheader {
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    background-color: var(--c4);
+    padding:15px 30px;
+    font-family:var(--textfont);
+    font-size:30px;
+    border-bottom: 10px solid black;
+}
+
+#plist {
+    display:flex;
+    flex-direction:column;
+    row-gap:10px;
+    background-color: var(--c3);
+    padding:15px 30px;
+    font-family:var(--textfont);
+    font-size:20px;
+    font-weight:bold;
+    border-bottom: 10px solid black;
+}
+
+#plist > div {
+    display:flex;
+    flex-direction:row;
+    column-gap:10px;
+}
+
+#plist > div > p {
+    width:fit-content;
+}
+
+#plist > div > p::after {
+    padding-left:10px;
+    content:"\2013";
+}   
+
+#plist a {
+    text-decoration:none;
+    width:fit-content;
+}
+
+@media only screen and (max-width:529px) {
+    #plist > div {
+        flex-direction:column;
+        column-gap:20px;
+    }
+
+    #plist > div > p::after {
+        padding-left:0px;
+        content:"";
+    }
+}
+
+@media only screen and (max-width:328px) {
+    #pfiller {
+        transition:none;
     }
 }
 
@@ -54,10 +134,6 @@ a {
     align-items:center;
     font-size:22px;
     font-weight:bold;
-}
-
-#pcontrib > a:hover {
-    color:var(--c5)
 }
 
 #pcontrib > a > img {
@@ -103,10 +179,6 @@ a {
     font-weight:bold;
     font-size:22px;
     text-decoration:none;
-}
-
-#pgit a:hover {
-    color:var(--c5)
 }
 
 #pgitlogo {
@@ -222,10 +294,6 @@ a {
 #phardware tfoot a {
     font-weight:bold;
     cursor:pointer;
-}
-
-#phardware tfoot a:hover {
-    color:var(--c5);
 }
 
 #pfritzmodal {

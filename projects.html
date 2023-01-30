@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects &ndash; Jake Rubin</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="./style/default.css">
+    <link rel="stylesheet" href="./style/navbar.css">
+    <link rel="stylesheet" href="./style/projects.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+    <div id="navbar">
+        <div id="navtitle" class="navelem">
+            <h1>JAKE RUBIN</h1>
+        </div>
+        <ul id="navlist" class="navnonmobile">
+            <li>
+                <a href="https://jakerubin.ca/" class="navelem navitem">
+                    <h3>Home</h3>
+                </a>
+            </li>
+            <li>
+                <a href="https://jakerubin.ca/aboutme" class="navelem navitem">
+                    <h3>About Me</h3>
+                </a>
+            </li>
+            <li class="navproj">
+                <span class="navelem navitem">
+                    <h3>Projects</h3>
+                    <img src="./img/downarrow.png" class="arrowimg">
+                </span>
+                <ul class="dropdown">
+                    <li>
+                        <a href="https://jakerubin.ca/projects/website" class="navelem navitem">
+                            <h5>This Website</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://jakerubin.ca/projects/batbot" class="navelem navitem">
+                            <h5>Batbot</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://jakerubin.ca/projects/covidapp" class="navelem navitem">
+                            <h5>COVID App</h5>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <a class="navelem navitem navres navnonmobile" href="https://jakerubin.ca/rubinresume.pdf" download>
+            <h3>Resume</h3>
+            <img src="img/download.svg" class="downloadimg">
+        </a>
+        <ul id="burgerbun">
+            <li id="closedburger">
+                <img src="img/hamburger.png">
+            </li>
+            <li id="openburger">
+                <span id="grillmarks">
+                    <img src="img/xicon.png">
+                </span>
+                <ul id="burgertoppings">
+                    <li>
+                        <a href="https://jakerubin.ca/" class="navelem navitem">
+                            <h3>Home</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://jakerubin.ca/aboutme" class="navelem navitem">
+                            <h3>About Me</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <span id="projspan" class="navelem navitem">
+                            <h3>Projects</h3>
+                            <img id="burgerarrow" src="img/downarrow.png" class="arrowimg">
+                        </span>
+                        <ul id="burgerdrop" style="display:none;">
+                            <li>
+                                <a href="https://jakerubin.ca/projects/website" class="navelem navitem">
+                                    <h5>This Website</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://jakerubin.ca/projects/batbot" class="navelem navitem">
+                                    <h5>Batbot</h5>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://jakerubin.ca/projects/covidapp" class="navelem navitem">
+                                    <h5>COVID App</h5>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="burgerres" class="navelem navitem navres" href="https://jakerubin.ca/rubinresume.pdf" download>
+                            <h3>Resume</h3>
+                            <img src="img/download.svg" class="downloadimg">
+                        </a>
+                    </li>
+                </ul>
+                <div id="grease"></div>
+            </li>
+        </ul>
+        <script src="js/navbar.js"></script>
+    </div>
+    <div id="ptitle">
+        <h1>Projects</h1>
+    </div>
+    <div id="pfiller">
+        <div id="plistheader">
+            <h4>Personal Projects</h4>
+        </div>
+        <div id="plist">
+            <a href="https://jakerubin.ca/projects/website">This Website</a>
+        </div>
+        <div id="plistheader">
+            <h4>Course Projects</h4>
+        </div>
+        <div id="plist">
+            <div>
+                <p>CPEN 291</p>
+                <a href="https://jakerubin.ca/projects/batbot">Batbot</a>
+            </div>
+            <div>
+                <p>CPEN 291</p>
+                <a href="https://jakerubin.ca/projects/covidapp">Automatic Vaccination Status Checker</a>
+            </div>
+            <div>
+                <span style="color:var(--c5);font-style:italic">Under construction:</span>
+            </div>
+            <div>
+                <p>CPEN 322</p>
+                <a>Rubination Communication</a>
+            </div>
+            <div>
+                <p>CPEN 331</p>
+                <a>OS161</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div></div>
+    </footer>    
+</body>
+</html>
