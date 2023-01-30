@@ -201,13 +201,13 @@ function navbarInit() {
     projspan.addEventListener("click", burgerDropdown);
 
     //Remove unnecessary links
-    let currpage = window.location.href.substring(window.location.href.lastIndexOf('/') + 1).replace('.html','')
+    let currpage = window.location.href.substring(window.location.href.lastIndexOf('/') + 1).replace('.html','');
     if(currpage == 'index' || currpage == '') {
         navbar.querySelectorAll("a[href='https://jakerubin.ca/']").forEach(link => {
             link.removeAttribute('href');
         });
-    } else {
-        navbar.querySelectorAll("a[href$="+currpage+"]").forEach(link => {
+    } else if(!(document.getElementById("frenchman"))) {
+        navbar.querySelectorAll("a[href$='"+currpage+"']").forEach(link => {
             link.removeAttribute('href');
         });
     }
